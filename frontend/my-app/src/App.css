@@ -1,0 +1,223 @@
+.little{
+  height: 70px;
+  width:100%;
+  background-color: rgb(49, 34, 34);
+  display: flex;
+  flex-direction: row;
+}
+.heading-hero{
+  font-size: 50px;
+  font-family: "Story Script", sans-serif;
+  color: rgb(204, 8, 8);
+}
+.my_div {
+  clip-path: polygon(0% 0%, 100% 0%, 90% 100%, 0% 100%);
+  width: 39%;
+  background-color: rgb(204, 8, 8);
+}
+.hero-section {
+  position: relative;
+  height: 500px;
+  overflow: hidden;
+  margin-top: 100px;
+}
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+}
+.hero-overlay-dark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.hero-content-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 60%;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 204, 1, 0.7) 0%,
+    rgba(255, 204, 1, 0.7) 50%,
+    rgba(255, 204, 1, 0.7) 100%
+  );
+  clip-path: polygon(40% 0%, 100% 0%, 100% 100%, 0% 100%);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 1rem;
+}
+
+.hero-content {
+  position: absolute;
+  max-width: 60%;
+  margin-top: -90px;
+  
+}
+
+.hero-text-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.text-hidden {
+  opacity: 0;
+}
+
+.hero-tagline {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #050000;
+  
+  letter-spacing: 0.1rem;
+  margin: 0;
+  font-family: "DM Serif Display", serif ;
+  
+}
+
+.hero-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: white;
+  line-height: 1.1;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  margin: 0;
+  background: linear-gradient(45deg, #0e0d0d, #0e0d0d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.7));
+}
+
+.hero-description {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.4;
+  margin: 0;
+  font-family:  "Inter", sans-serif;
+}
+
+.hero-button-container {
+  padding-top: 0.5rem;
+}
+
+.hero-button {
+  background-color: #3b82f6;
+  color: white;
+  font-weight: 600;
+  padding: 0.5rem 1.5rem;
+  font-size: 0.875rem;
+  border: none;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero-button:hover {
+  background-color: rgba(59, 130, 246, 0.9);
+}
+
+.hero-bus-container {
+  position: absolute;
+  bottom: 0.1rem;
+  
+  left: 35%;
+  transform: translateX(-50%);
+}
+
+.hero-bus {
+  height: 300px;
+  width: auto;
+  max-width: 700px;
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.3));
+}
+
+.bus-hidden {
+  opacity: 0;
+  transform: translateX(-8rem);
+}
+
+.hero-community-card-container {
+  position: absolute;
+  bottom: 0.5rem;
+  right: 0.5rem;
+}
+
+.hero-community-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  border-radius: 0.375rem;
+  padding: 1rem;
+  max-width: 16rem;
+}
+
+.hero-community-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  margin: 0 0 0.25rem 0;
+}
+
+.hero-community-description {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.75rem;
+  line-height: 1.4;
+  margin: 0;
+}
+
+@keyframes textFade {
+  0% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes busSlide {
+  0% {
+    opacity: 0;
+    transform: translateX(-120px) scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+.animate-text-fade {
+  animation: textFade 1s ease-out forwards;
+}
+
+.animate-bus-slide {
+  animation: busSlide 2.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+
+/* Bus hover effect */
+.animate-bus-slide:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+ 
+/* Backdrop blur support fallback */
+@supports not (backdrop-filter: blur(12px)) {
+  .hero-community-card {
+    background: rgba(255, 255, 255, 0.2);
+  }
+}
+

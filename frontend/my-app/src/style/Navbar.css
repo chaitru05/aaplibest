@@ -1,0 +1,404 @@
+/* Navbar Wrapper */
+.navbar-wrapper {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+ 
+}
+/* ...existing code... */
+.logo {
+  position: absolute;
+  left: 0;
+  z-index: 2;
+}
+
+.logo img {
+  width: 100px;           /* Adjust size as needed */
+  height: 100px;          /* Adjust size as needed */
+  object-fit: cover;
+  border-radius: 50%;    /* Makes it a circle */
+  border: 4px solid #fff; /* Thicker white border for overlap */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08); /* Optional: subtle shadow */
+  margin-top: -50px;      /* Pull the logo up to overlap the top bar */
+  background: #fff;
+  margin-left: 80PX;
+  display: block;
+}
+/* ...existing code... */
+
+/* Top Contact Bar */
+.top-bar {
+  background-color: #23140C; /* Black background */
+  color: white;
+  padding: 8px 5px;
+  font-size: 14px;
+  height: 30px;
+}
+
+.top-bar > div {
+  display: flex;
+  justify-content: flex-end; /* Align content to the right */
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.top-bar .contact-info {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  flex: 1;
+  font-size: 19px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.contact-item svg {
+  color: #fbbf24; /* Yellow icons */
+  flex-shrink: 0;
+}
+
+.contact-item span {
+  color: white;
+  font-size: 20px;
+}
+
+.social-links {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color:#fbbf24;
+  
+}
+
+.social-links .social-link svg {
+  color: #fbbf24 !important;
+  /* Make icons bigger if needed */
+  width: 28px;
+  height: 28px;
+  transition: color 0.3s;
+}
+
+.social-links .social-link:hover svg {
+  color: #dc2626 !important; /* Optional: red on hover */
+}
+
+/* Main Navbar Container */
+.navbar-container {
+  background-color: WHITE; 
+  display: flex;
+  justify-content: center;      /* Center all content horizontally */
+  align-items: center;
+  padding: 5px 20px;
+  max-width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Logo Styles */
+.logo h1 {
+  color: #dc2626; /* Red text */
+  font-size: 28px;
+  font-weight: bold;
+  margin: 0;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Navigation Links */
+.nav-links ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 30px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #374151; /* Dark gray */
+  font-weight: 500;
+  font-size: 20px; /* Change this value as needed */
+  transition: all 0.3s ease;
+  padding: 8px 16px;
+  border-radius: 6px;
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #dc2626; /* Red underline */
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #dc2626; /* Red on hover */
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.nav-links a.active {
+  color: #dc2626; /* Red for active */
+  font-weight: 600;
+}
+
+.nav-links a.active::after {
+  width: 100%;
+  background-color: #fbbf24; /* Yellow underline for active */
+}
+
+.nav-links li {
+  margin: 0;
+  padding: 0;
+}
+
+/* Call to Action Button */
+.nav-buttons {
+  display: flex;
+  align-items: center;
+}
+
+.callforaction {
+  background: linear-gradient(135deg, #dc2626, #b91c1c); /* Red gradient */
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
+}
+
+.callforaction:hover {
+  background: linear-gradient(135deg, #b91c1c, #991b1b);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(220, 38, 38, 0.4);
+}
+
+.callforaction:active {
+  transform: translateY(0);
+}
+
+/* Hamburger styles */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  z-index: 2001;
+  margin-left: auto;
+}
+
+.hamburger span {
+  height: 4px;
+  width: 100%;
+  background: #dc2626;
+  margin: 5px 0;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+/* Responsive Navbar */
+@media (max-width: 900px) {
+  .navbar-container {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px 16px;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 60px;
+    right: 0;
+    width: 220px;
+    background: #fff;
+    box-shadow: -2px 0 16px rgba(0,0,0,0.08);
+    height: 100vh;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 40px 24px;
+    gap: 0;
+    transform: translateX(100%);
+    transition: transform 0.3s;
+    z-index: 2000;
+    display: flex;
+  }
+
+  .nav-links.open {
+    transform: translateX(0);
+  }
+
+  .nav-links ul {
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+  }
+
+  .nav-links a {
+    font-size: 20px;
+    padding: 12px 0;
+    width: 100%;
+    display: block;
+  }
+
+  .nav-buttons {
+    width: 100%;
+    margin-top: 24px;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
+/* Hide nav-links on mobile by default */
+@media (max-width: 900px) {
+  .nav-links {
+    display: none;
+  }
+  .nav-links.open {
+    display: flex;
+  }
+}
+
+/* Show nav-links as normal on desktop */
+@media (min-width: 901px) {
+  .nav-links {
+    display: flex !important;
+    position: static;
+    height: auto;
+    background: none;
+    box-shadow: none;
+    flex-direction: row;
+    align-items: center;
+    padding: 0;
+    transform: none;
+  }
+  .hamburger {
+    display: none !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .top-bar {
+    padding: 6px 0;
+  }
+  
+  .top-bar > div {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+  
+  .contact-item {
+    font-size: 12px;
+  }
+  
+  .social-links {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+  
+  .navbar-container {
+    flex-direction: column;
+    gap: 20px;
+    padding: 15px;
+  }
+  
+  .nav-links ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  .nav-links a {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+  
+  .logo h1 {
+    font-size: 24px;
+  }
+  
+  .callforaction {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-info {
+    padding: 0 10px;
+  }
+  
+  .contact-item span {
+    display: none;
+  }
+  
+  .contact-item {
+    justify-content: center;
+  }
+  
+  .nav-links ul {
+    gap: 10px;
+  }
+  
+  .nav-links a {
+    padding: 5px 10px;
+    font-size: 13px;
+  }
+}
+/* Added styles for language toggle button */
+.language-toggle {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-right: 10px;
+}
+
+.language-toggle:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.language-toggle span {
+  font-weight: 500;
+  font-size: 11px;
+}
+
+/* Global Styles */
+body, .navbar-wrapper, .top-bar, .navbar-container, .nav-links a, .logo h1, .callforaction, .contact-item, .social-links, .nav-links ul, .nav-links li {
+  font-family: "DM Serif Text", serif !important;
+  font-weight: 800 !important;
+
+}

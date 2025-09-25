@@ -1,0 +1,41 @@
+/* Added new classes and adjusted existing styles for non-Tailwind implementation */
+.vision-section-container {
+  padding: 4rem 1rem; /* py-16 px-4 */
+  background-color: #fdfaf5; /* Light cream background */
+}
+
+.vision-section-content {
+  max-width: 48rem; /* max-w-3xl */
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.heading {
+  font-size: 2.5rem; /* Adjust as needed */
+  font-weight: 700;
+  color: #333; /* Dark gray/black for the heading */
+  margin-bottom: 1rem;
+  position: relative;
+  display: inline-block; /* To center the underline with the text */
+}
+
+.underline {
+  position: absolute;
+  bottom: -0.5rem; /* Adjust position below the text */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px; /* Length of the underline */
+  height: 4px; /* Thickness of the underline */
+  background-color: #facc15; /* Yellow color */
+}
+
+.vision-section-text {
+  font-size: 1.125rem; /* Adjust as needed */
+  line-height: 1.6;
+  color: #555; /* Slightly lighter gray for the paragraph */
+  margin-top: 2rem;
+  max-width: 600px; /* Limit width for readability */
+  margin-left: auto;
+  margin-right: auto;
+}
