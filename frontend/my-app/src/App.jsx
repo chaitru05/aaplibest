@@ -3,10 +3,8 @@
 import "./App.css"
 import { useEffect, useState, useRef } from "react"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
-
 import buildingBg from "./assets/bg2.jpg"
 import redBus from "./assets/hero-1.png"
-
 import TeamSection from "./component/TeamSection"
 import CategorySlider from "./component/CategorySlider"
 import About from "./component/About"
