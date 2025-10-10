@@ -35,8 +35,8 @@ const About1 = () => {
             initial="hidden"
             animate={inView ? "visible" : "hidden"}
           >
-            <h3>Aapli BEST Aaplyachsathi</h3>
-            <p> is a non-political, non-profit organization working in the interest of the BEST passanger and to improve the transport system in Mumbai and the overall welfare of MMR region.
+            <h3>BEST is not just a bus, it’s a movement that keeps Mumbai moving.</h3>
+            <p>Aapli BEST Aaplyachsathi is a non-political, non-profit organization working in the interest of the BEST passanger and to improve the transport system in Mumbai and the overall welfare of MMR region.
 The content provided on this website  is for general informational and awareness purposes only. While we strive to keep the information up to date and accurate, we make no representations or warranties of any kind, express or implied, about the completeness, accuracy, reliability, or suitability of the content found on this site.</p>
           </motion.div>
 
@@ -48,8 +48,9 @@ The content provided on this website  is for general informational and awareness
             animate={inView ? "visible" : "hidden"}
           >
             <img
-              src="https://img.onmanorama.com/content/dam/mm/en/travel/travel-news/images/2023/9/13/red-bus.jpg?w=1120&h=583"
+              src="about-busimg.jpeg"
               alt="BEST Bus"
+              style={{ width: '700px', height: '350px', objectFit: 'cover' }}
             />
           </motion.div>
         </div>

@@ -17,10 +17,12 @@ import FeedbackPage from "./component/FeedbackPage"
 import { LanguageProvider, useLanguage } from "./contexts/LanguageContext"
 import { translations } from "./data/translations"
 import About1 from "./component/About1.jsx"
-import PopupModal from "./component/PopUpModal.jsx"
 import Cnetric from "./component/Cnetric.jsx"
 import Routedev from "./component/Routedev.jsx"
-
+import Public from "./component/Public.jsx"
+import Policyacc from "./component/Policyacc.jsx"
+import Passenger from "./component/Passenger.jsx"
+import HelpLineIcon from "./component/HelpLineIcon.jsx"
 
 function HomePage() {
   const { language } = useLanguage()
@@ -72,10 +74,11 @@ function HomePage() {
                 isLoaded ? "animate-text-fade" : "text-hidden"
               }`}
             > <h className="heading-hero">Aapli Best</h>
-              <p className="hero-tagline">
-                {heroT.tagline} <br />
-                {heroT.subtitle}
-              </p>
+              <p className="hero-tagline"> "Aamhi Aaplya Sobatch Aahot" </p>
+                
+             <p className="hero-subtitle">Service organization working as the link between passengers and workers of Best </p>
+                
+              
             </div>
           </div>
         </div>
@@ -119,7 +122,7 @@ function HomePage() {
 function App() {
   return (
     <LanguageProvider>
-      <PopupModal />
+    
         <Navbar />
         <Routes>
           {/* Home */}
@@ -129,9 +132,12 @@ function App() {
           {/* Category pages */}
           <Route path="/route-development" element={<Routedev/>} />
           <Route path="/centric" element={<Cnetric/>} />
+          <Route path="/public" element={<Public/>} />
+          <Route path="/policy" element={<Policyacc/>} />
+          <Route path="/passenger" element={<Passenger/>} />
          
         </Routes>
-       
+        <HelpLineIcon />
     </LanguageProvider>
   )
 }

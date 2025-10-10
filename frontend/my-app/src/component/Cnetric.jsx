@@ -138,8 +138,8 @@ const bestDayData = {
         </div>
       </section>
 
-      <section className="content-section">
-        <div className="cards-container">
+      <section className="content-section-vithal">
+        <div className="cards-container-vithal">
           {projectData.cards.map((card) => (
             <div key={card.id} className="project-card">
               <div className="card-image-container" onClick={() => card.hasVideo && openVideo(card.videoUrl)}>

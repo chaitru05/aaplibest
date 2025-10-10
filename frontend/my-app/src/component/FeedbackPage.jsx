@@ -16,11 +16,12 @@ const FeedbackPage = () => {
   }
 
   return (
-    <div className="feedback-container">
+    <section className="feedback">
+      <div className="feedback-container">
       <div className="content-wrapper">
         {/* Left Image */}
         <div className="image-section left-image">
-          <img src="/bus-img3.jpeg" alt={t.imageAlt1} className="section-image left-rounded" />
+          <img src="/bus-illus2.png" alt={t.imageAlt1} className="section-image left-rounded" />
         </div>
 
         {/* Central Content */}
@@ -41,10 +42,10 @@ const FeedbackPage = () => {
 
         {/* Right Image */}
         <div className="image-section right-image">
-          <img src="/bus-img1.jpeg" alt={t.imageAlt2} className="section-image right-rounded" />
+          <img src="/bus-illus1.png" alt={t.imageAlt2} className="section-image right-rounded" />
         </div>
       </div>
-    </div>
+    </div> </section>
   )
 }
 

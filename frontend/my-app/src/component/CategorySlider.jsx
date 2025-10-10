@@ -23,20 +23,20 @@ function CategorySlider() {
       id: 2,
       name: t.categories[1],
       image: "/public-img.jpg?height=400&width=600",
-      path: "/culture",
+      path: "/public",
     },
     {
       id: 3,
       name: t.categories[2],
       image:
         "/work.jpg",
-      path: "/modern",
+      path: "/passenger",
     },
     {
       id: 4,
       name: t.categories[3],
       image: "/eng-img.jpeg?height=400&width=600",
-      path: "/sculpture",
+      path: "/policy",
     },
     {
       id: 5,
@@ -55,7 +55,10 @@ function CategorySlider() {
   }, [categories.length])
 
   return (
-    <div className="slider-container">
+    <div
+      className="slider-container"
+      
+    >
       <h1 className="gallery-title">{t.title}</h1>
       <div className="slider">
         {categories.map((category, index) => {
@@ -71,9 +74,10 @@ function CategorySlider() {
               to={category.path}
               className={`slider-card ${index === activeIndex ? "active" : ""}`}
               style={{
-                transform: `translateX(${position * 40}%) scale(${
+                transform: `translateX(${position * 55}%) scale(${
                   1 - Math.abs(position) * 0.1
                 }) translateZ(${-Math.abs(position) * 60}px)`,
+
                 zIndex: categories.length - Math.abs(position),
                 opacity: 1 - Math.abs(position) * 0.1,
               }}

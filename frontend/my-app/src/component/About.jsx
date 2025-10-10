@@ -45,7 +45,7 @@ const About = () => {
   }
 
   return (
-    <section id="about" className="about">
+  <section id="about" className="about" >
       {/* SVG DECORATION AT BOTTOM LEFT */}
       <span className="about-svg-bottom">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" width="120" height="120">
@@ -102,7 +102,12 @@ const About = () => {
           >
             <motion.h3 variants={itemVariants}>{t.heading}</motion.h3>
 
-            <motion.p variants={itemVariants}>{t.description}</motion.p>
+            <motion.p variants={itemVariants}>
+            Welcome to Aapli BEST Aaplyachsathi, a passionate and people-driven NGO dedicated to strengthening the bond between the passengers and workers of Mumbai’s iconic BEST buses.
+
+For decades, the BEST has been more than just a transport service — it has been the heartbeat of Mumbai, carrying millions every day with reliability, care, and dignity. At Aapli BEST Aaplyachsathi, we stand firmly committed to safeguarding this legacy by opposing privatization, ensuring fair treatment and rights for all stakeholders, and amplifying the voices of both commuters and employees.
+
+ </motion.p>
           </motion.div>
         </div>
       </div>

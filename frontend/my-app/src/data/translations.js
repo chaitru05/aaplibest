@@ -19,8 +19,8 @@ export const translations = {
   },
   hero: {
     en: {
-      tagline: "Mumbai's Lifeline",
-      subtitle: "Service organization working as the link between passengers and workers of Best Bus",
+      tagline: "Aamhi Aaplya Sobatch Aahot",
+      subtitle: "Service organization working as the link between passengers and workers of Best",
     },
     mr: {
       tagline: "मुंबईची जीवनरेषा",
@@ -47,7 +47,7 @@ export const translations = {
     en: {
       title: "Meet Our Team",
       description:
-        "Discover the passionate individuals who drive our mission forward—a dedicated team showcasing resilience, innovation, and unwavering commitment to community service. From visionary leaders building organizational excellence to active members empowering local communities, these profiles represent the transformative impact of collective dedication and collaborative teamwork.",
+        "Discover the passionate individuals who keep the wheels of Aapli BEST Aaplyachsathi moving, A dedicated group united by purpose, compassion, and a deep love for Mumbai’s lifeline, the BEST bus. From strategic planners and creative minds to on-ground advocates, each member plays a vital role in strengthening our mission to protect and promote public transport. Together, we uplift the spirit of collaboration, civic responsibility, and innovation thereby driving positive change, one route, one campaign, and one commuter at a time.",
     },
     mr: {
       title: "आमच्या टीमला भेटा",

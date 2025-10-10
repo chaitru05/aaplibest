@@ -1,4 +1,25 @@
 /* Navbar Wrapper */
+.social-links {
+  position: relative;
+  z-index: 9999; /* bring to top */
+  display: flex;
+  gap: 12px;
+}
+
+.social-link {
+  color: #fff;
+  cursor: pointer;
+}
+
+.social-link svg {
+  pointer-events: auto; /* ensures icon clicks */
+}
+
+.top-bar {
+  position: relative;
+  z-index: 1; /* keep bar below icons */
+}
+
 .navbar-wrapper {
   width: 100%;
   position: fixed;
@@ -29,7 +50,7 @@
 
 /* Top Contact Bar */
 .top-bar {
-  background-color: #23140C; /* Black background */
+  background-color:  rgb(49, 34, 34); /* Black background */
   color: white;
   padding: 8px 5px;
   font-size: 14px;

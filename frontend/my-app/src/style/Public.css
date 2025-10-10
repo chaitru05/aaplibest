@@ -1,0 +1,483 @@
+.investor-page {
+  position: relative;
+  height:600px;
+  display: flex;
+  overflow: hidden;
+  margin:50px;
+  margin-top: 120px;
+  /* Changed from teal to light yellow base color */
+ 
+}
+
+/* Left content section */
+.content-section {
+  position: relative;
+  z-index: 10;
+  width: 35%;
+  display: flex;
+  align-items: center;
+ 
+
+ background:rgba(255, 221, 0, 0.3);
+ 
+  clip-path: polygon(0 0, 97% 0, 69% 100%, 0% 100%); }
+
+
+.main-heading-public {
+  font-size: 2rem;
+  font-style: italic;
+  font-weight: 300;
+  color: black;
+  line-height: 1.1;
+  margin-bottom: 4rem;
+  letter-spacing: -1px;
+}
+
+/* Dropdown container */
+
+
+/* Diagonal divider */
+
+/* Right image section */
+.image-section-public {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  
+}
+
+/* Added white transparent overlay on image */
+
+
+.hero-image-public {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Magenta accent triangle */
+.accent-triangle {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  /* Increased triangle size for more accurate design */
+  border-width: 0 0 400px 350px;
+  border-color: transparent transparent #c2185b transparent;
+  z-index: 20;
+  /* Added subtle shadow for depth */
+  filter: drop-shadow(-2px -2px 8px rgba(194, 24, 91, 0.3));
+}
+.public-awareness-section {
+  width: 100%;
+  min-height: 100vh;
+  background: hsl(var(--background));
+  padding: 5rem 2rem;
+}
+
+.awareness-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+
+}
+
+.awareness-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  text-align: center;
+  color: hsl(var(--foreground));
+  margin-bottom: 2rem;
+  line-height: 1.2;
+}
+
+.awareness-description {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  line-height: 1.8;
+  text-align: center;
+  color: hsl(var(--muted-foreground));
+  max-width: 1100px;
+  margin: 0 auto ;
+  font-weight: 400;
+}
+
+/* FOUR-IMAGE STAGGERED LAYOUT */
+.awareness-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+ 
+  align-items: start;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.media {
+  position: relative;
+}
+
+.image-wrapper {
+  position: relative;
+  overflow: hidden;
+   border-radius: 10px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+.image-left {
+  aspect-ratio: 16 / 10;
+  clip-path: polygon(0 0, 100% 0, 95% 100%, 0 100%);
+}
+
+.image-right {
+  aspect-ratio: 16 / 10;
+  clip-path: polygon(15% 0, 100% 0, 100% 100%, 0 100%);
+  margin-top: 300px; /* pushes the right image down for staggered effect */
+}
+
+.awareness-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.image-wrapper:hover .awareness-image {
+  transform: scale(1.05);
+}
+
+/* CAPTIONS BESIDE IMAGES */
+.caption {
+  position: absolute;
+  max-width: 22rem;
+  background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary-dark)) 100%);
+  color: hsl(var(--primary-foreground));
+  padding: 1.5rem 1.75rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+}
+
+.caption-right {
+  top: 50%;
+  right: -2rem; /* sit beside the left image */
+  transform: translateY(-50%);
+}
+
+.caption-left {
+  top: 20%;
+  left: -2rem; /* sit beside the right image */
+}
+
+.caption-title {
+  font-size: clamp(1.25rem, 2.4vw, 1.75rem);
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  font-style: italic;
+}
+
+.caption-subtitle {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  opacity: 0.95;
+  line-height: 1.5;
+  border-left: 3px solid hsl(var(--primary-foreground));
+  padding-left: 0.75rem;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .awareness-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .image-right {
+    margin-top: 0;
+  }
+
+  .caption {
+    position: static;
+    background: transparent;
+    color: hsl(var(--foreground));
+    box-shadow: none;
+    padding: 0.75rem 0 0;
+  }
+
+  .caption-subtitle {
+    border-left: 3px solid hsl(var(--ring));
+    padding-left: 0.75rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .public-awareness-section {
+    padding: 3rem 1rem;
+  }
+
+  .awareness-content {
+    gap: 1.5rem;
+  }
+
+  .caption-title {
+    font-size: 1.125rem;
+  }
+
+  .caption-subtitle {
+    font-size: 0.75rem;
+  }
+}
+/* Responsive design */
+@media (max-width: 1024px) {
+  .content-section {
+    width: 100%;
+    clip-path: none;
+  }
+
+  .content-wrapper {
+    margin-left: 2rem;
+  }
+
+  .main-heading {
+    font-size: 4rem;
+  }
+
+  .image-section {
+    display: none;
+  }
+
+  .diagonal-divider {
+    display: none;
+  }
+
+  .accent-triangle {
+    border-width: 0 0 200px 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .content-wrapper {
+    margin-left: 0;
+  }
+
+  .main-heading {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+  }
+
+  .bayer-logo {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .dropdown-container {
+    max-width: 100%;
+  }
+
+  .accent-triangle {
+    border-width: 0 0 150px 150px;
+  }
+}
+.diagonal-section {
+ 
+  background: hsl(var(--background));
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.diagonal-container {
+  max-width: 1600px;
+  margin: 0 auto;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 60% 40%;
+  gap: 50px;
+  column-gap: -5rem;
+  position: relative;
+}
+.diagonal-container-2 {
+  position: absolute;
+  top:25%;
+  max-width: 1600px;
+  margin: 0 auto;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 60% 40%;
+  gap: 50px;
+  column-gap: -5rem;
+  position: relative;
+}
+/* Left card with diagonal image and overlaid text */
+.diagonal-left-card {
+  position: relative;
+  grid-column: 1;
+  grid-row: 1;
+  z-index: 2;
+}
+
+.diagonal-left-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  
+  overflow: hidden;
+}
+
+.diagonal-image {
+  width: 100%;
+  height: 90%;
+  object-fit: cover;
+}
+
+.diagonal-blue-accent {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 60px;
+  background: hsl(var(--primary));
+  
+}
+
+/* Text overlaid on left image */
+.diagonal-left-text {
+  position: absolute;
+  right: -75%;
+  top: 12%;
+  z-index: 10;
+  background: transparent;
+  padding: 2rem 2rem 2rem 8rem;
+  max-width: 800px;
+  text-align: left;
+}
+
+.diagonal-main-title {
+  font-size: 4rem;
+  font-weight: 300;
+  color: hsl(var(--primary));
+  font-style: italic;
+  margin: 0 0 0.5rem 0;
+  line-height: 1.1;
+}
+
+.diagonal-subtitle {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: hsl(var(--foreground));
+  letter-spacing: 0.05em;
+  margin: 0;
+}
+
+/* Bottom left text section */
+.diagonal-bottom-text {
+  position: absolute;
+  padding-left: 250px;
+  grid-column: 1;
+  grid-row: 2;
+  margin-right: 75%;
+  
+}
+
+.diagonal-pharma-title {
+  font-size: 3rem;
+  font-weight: 300;
+  color: hsl(var(--primary));
+  font-style: italic;
+  margin: 0 0 0.5rem 0;
+  line-height: 1.2;
+}
+
+.diagonal-pharma-subtitle {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: hsl(var(--foreground));
+  letter-spacing: 0.05em;
+  margin: 0;
+}
+
+/* Right card - diagonal image positioned lower */
+.diagonal-right-card {
+  grid-column: 2;
+  grid-row: 1 / 3;
+  align-self: end;
+  padding-bottom: 0;
+  margin-top: 12rem;
+  z-index: 1;
+}
+
+.diagonal-right-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 400px;
+
+  overflow: hidden;
+  box-shadow: 0 10px 40px hsl(var(--foreground) / 0.15);
+}
+
+@media (max-width: 1024px) {
+  .diagonal-container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .diagonal-left-card,
+  .diagonal-bottom-text,
+  .diagonal-right-card {
+    grid-column: 1;
+    grid-row: auto;
+  }
+  
+  .diagonal-left-text {
+    position: relative;
+    right: 0;
+    top: 0;
+    max-width: 100%;
+    margin-top: 2rem;
+  }
+  
+  .diagonal-right-card {
+    align-self: auto;
+    padding-bottom: 0;
+  }
+  
+  .diagonal-left-image-wrapper,
+  .diagonal-right-image-wrapper {
+    height: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .diagonal-section {
+    padding: 2rem 1rem;
+  }
+  
+  .diagonal-main-title,
+  .diagonal-pharma-title {
+    font-size: 2rem;
+  }
+  
+  .diagonal-subtitle,
+  .diagonal-pharma-subtitle {
+    font-size: 0.75rem;
+  }
+  
+  .diagonal-left-image-wrapper,
+  .diagonal-right-image-wrapper {
+    height: 300px;
+    clip-path: none;
+  }
+  
+  .diagonal-blue-accent {
+    display: none;
+  }
+}

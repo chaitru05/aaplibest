@@ -16,7 +16,7 @@ const PublicAwareness = () => {
       title: "Social Media Campaigns",
       description: "Run active social media campaigns to update citizens on routes, services, and initiatives.",
       color: "orange",
-      image: "https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop"
+      image: "socialmedia1.jpg"
     },
     {
       id: 3,
@@ -31,7 +31,7 @@ const PublicAwareness = () => {
     <section className="public-awareness-section">
       <div className="section-header">
         <div className="header-icon"></div>
-        <h2 className="section-title">Public Awareness and Communication</h2>
+        <h2 className="section-title">Social Media</h2>
       </div>
       
       <div className="cards-container">
@@ -51,19 +51,9 @@ const PublicAwareness = () => {
             </div>
           ))}
         </div>
+    
         
-        <button className="nav-arrow nav-arrow-right">
-          <ChevronRight size={24} />
-        </button>
         
-        <div className="pagination-dots">
-          <span className="dot active"></span>
-          <span className="dot"></span>
-          <span className="dot"></span>
-          <span className="dot"></span>
-          <span className="dot"></span>
-          <span className="dot"></span>
-        </div>
       </div>
     </section>
   );
