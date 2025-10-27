@@ -1,91 +1,144 @@
-import React from 'react';
-import '../style/Route.css';
-import { Timeline } from './Timeline';
-
-function Routedev() {
+import "../style/route.css";
+import React, { useState } from 'react';
+import { Play } from 'lucide-react';
+import Footer from "./Footer";
+const Routedev = () => {
   const achievements = [
-    {
-      title: "Route A-30 Launch Success",
-      description: "Successfully advocated for the launch of Route A-30 through persistent engagement and strategic follow-up with BEST officials, ensuring improved connectivity for thousands of daily commuters.",
-      image: ""
-    },
-    {
-      title: "Route C-10 Optimization",
-      description: "Led comprehensive modifications to Route C-10 by incorporating valuable passenger feedback and optimizing route coverage, resulting in enhanced service quality and passenger satisfaction.",
-      image: ""
-    },
-    {
-      title: "Route 44 to A-44 Conversion",
-      description: "Spearheaded the strategic conversion of Route 44 into A-44, delivering superior connectivity and operational efficiency that benefits both commuters and the transit system.",
-      image: ""
-    },
-    {
-      title: "Route 218 Extension Achievement",
-      description: "Championed the extension of Route 218 from TB Hospital to P.T. Udyan Bus Station, Sewree, dramatically improving service accessibility for commuters throughout the Sewree belt area.",
-      image: ""
-    },
-    {
-      title: "Metro Connectivity - Route 175",
-      description: "Identified the critical need for Dadar Metro Station connectivity and successfully advocated for a new route, which culminated in the launch of Route 175, bridging important transit gaps.",
-      image: ""
-    },
-    {
-      title: "Route 200 Extension to A-200",
-      description: "Through persistent follow-up efforts, secured the extension of Route 200 from Wadala Depot to Jijamata Udyan, transforming it into the enhanced A-200 service with broader coverage.",
-      image: ""
-    },
-    {
-      title: "Coastal Road Innovation - Route 84",
-      description: "Pioneered the concept for Route 84, establishing vital connectivity between western suburbs and South Mumbai via the Coastal Road, delivering significant travel time savings for commuters.",
-      image: "https://images.pexels.com/photos/1002100/pexels-photo-1002100.jpeg?auto=compress&cs=tinysrgb&w=800"
-    },
-    {
-      title: "Route Clarity Initiative & Festival Services",
-      description: "Proposed the strategic renumbering of Route 25 to Route 29, eliminating passenger confusion with A-25, while also facilitating special night bus services during Ganeshotsav 2025 across key festival areas.",
-      image: "https://images.pexels.com/photos/1059120/pexels-photo-1059120.jpeg?auto=compress&cs=tinysrgb&w=800"
-    }
-  ];
+  {
+    id: 1,
+    title: 'Route C-10 Optimization',
+    description:
+      'Played a key role in modifying Route C-10, incorporating passenger feedback and optimizing coverage.',
+  },
+  {
+    id: 2,
+    title: 'Route 44 Conversion to A-44',
+    description:
+      'Recommended and pushed through the conversion of Route 44 into A-44, enabling better connectivity and operational efficiency.',
+  },
+  {
+    id: 3,
+    title: 'Route 218 Extension',
+    description:
+      'Advocated for the extension of Route 218 from TB Hospital to P.T. Udyan Bus Station, Sewree, offering improved service access to commuters in the Sewree belt.',
+  },
+  {
+    id: 4,
+    title: 'Route 175 Launch',
+    description:
+      'Advocated for starting a new route providing connectivity to Dadar Metro Station, which resulted in the launch of Route 175.',
+  },
+  {
+    id: 5,
+    title: 'Route 200 Extension to A-200',
+    description:
+      'Due to our constant follow-up, Route no. 200 was extended up to Jijamata Udyan from the existing Wadala Depot and will now run as A-200.',
+  },
+  {
+    id: 6,
+    title: 'Route 84 via Coastal Road',
+    description:
+      'Route no. 84 was started from our suggestion, connecting the western suburbs to South Mumbai via the Coastal Road, saving significant travel time.',
+  },
+];
+
+
+  const [, setVideoModal] = useState(null);
+
+  const handleVideoClick = () => {
+    setVideoModal('#');
+    console.log('Opening video');
+  };
 
   return (
-    <div className="App">
-      {/* Hero Section */}
-      <section className="hero">
-        <div className="hero-overlay">
-          <img src="/image.png" alt="Route Icon" style={{ width: '80px', height: '80px', marginBottom: '16px' }} />
-          <h1 className="hero-title-route">Route Development & Advocacy</h1>
-        </div>
-      </section>
-
-      {/* Main Content */}
-      <div className="content-container">
-        {achievements.map((achievement, index) => (
-          <section 
-            key={index} 
-            className={`achievement-section ${index % 2 === 0 ? 'left-align' : 'right-align'}`}
-          >
-            <div className="achievement-content">
-              <div className="text-content">
-                <h2 className="achievement-title">{achievement.title}</h2>
-                <p className="achievement-description">{achievement.description}</p>
-              </div>
-              <div className="image-content">
-                <img 
-                  src={achievement.image} 
-                  alt={achievement.title}
-                  className="achievement-image"
-                />
-              </div>
-            </div>
-             <Timeline/>
-          </section>
-         
-        ))}
+    <>
+    <section className="route-section">
+      <div className="route-content-section">
+        <h1 className="route-heading">
+          Route Development <br />
+          Advocacy<br />
+        </h1>
       </div>
 
-      {/* Footer */}
-   
-    </div>
+      <div className="route-image-mask-container">
+        <div className="route-cont"></div>
+        <div className="route-cont2"></div>
+        <div className="route-image-mask">
+          <img 
+            src="Route-hero.jpeg" 
+            alt="Community healthcare - women and children gathering"
+          />
+        </div>
+
+       
+      </div>
+    </section>
+         <section className="route-wrapper">
+      {/* LEFT SIDE - IMAGES */}
+      <div className="route-left">
+        <div className="route-card-grid">
+          <div className="route-card">
+            <img src="A30-1.jpeg" alt="Community work" />
+          </div>
+          <div className="route-card">
+            <img src="A30-2.jpeg"  alt="Public transport" />
+          </div>
+          <div className="route-card wide">
+            <img src="A30-3.jpeg"  alt="BEST route" />
+          </div>
+        </div>
+      </div>
+
+      {/* RIGHT SIDE - CONTENT */}
+      <div className="route-right">
+        <h2>Driving Change. Empowering Commutes.</h2>
+        <p>
+          Successfully advocated for the launch of{" "}
+          <strong>Route A-30</strong> after continuous follow-up with{" "}
+          <strong>BEST officials</strong>.  
+          This initiative improved last-mile connectivity and provided a more
+          efficient travel option for hundreds of commuters.
+        </p>
+      </div>
+    </section>
+
+    <section className="route-achievements">
+      <div className="achievements-container">
+        <h2 className="achievements-heading">Our Key Route Achievements</h2>
+
+        <div className="content-layout">
+          <div
+            className="video-section"
+            onClick={handleVideoClick}
+            role="button"
+            tabIndex={0}
+            onKeyPress={(e) => {
+              if (e.key === 'Enter') handleVideoClick();
+            }}
+          >
+            <img
+              src="https://images.pexels.com/photos/1030841/pexels-photo-1030841.jpeg?auto=compress&cs=tinysrgb&w=800"
+              alt="Route achievements video"
+            />
+            <div className="play-overlay">
+              <Play className="play-icon" size={64} />
+            </div>
+          </div>
+
+          <div className="achievements-grid">
+            {achievements.map((achievement) => (
+              <div key={achievement.id} className="achievement-card">
+                <h3 className="card-title-ach">{achievement.title}</h3>
+                <p className="card-description-ach">{achievement.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+    <Footer/>
+      </>
   );
-}
+};
 
 export default Routedev;

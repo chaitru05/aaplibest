@@ -24,7 +24,7 @@ import HelpLineIcon from "./component/HelpLineIcon.jsx"
 
 function HomePage() {
   const { language } = useLanguage()
-  const heroT = translations.hero[language]
+  const t = translations.hero[language]
 
   const [isLoaded, setIsLoaded] = useState(false)
   const [animate, setAnimate] = useState(false)
@@ -71,10 +71,11 @@ function HomePage() {
               className={`hero-text-container ${
                 isLoaded ? "animate-text-fade" : "text-hidden"
               }`}
-            > <h className="heading-hero">Aapli Best</h>
-              <p className="hero-tagline"> "Aamhi Aaplya Sobatch Aahot" </p>
+            > <h className="heading-hero">{t.heading}</h>
+              <p className="hero-tagline">{t.tagline} </p>
                 
-             <p className="hero-subtitle">Service organization working as the link between passengers and workers of Best </p>
+             <p className="hero-subtitle">{t.subtitle}
+               </p>
                 
               
             </div>

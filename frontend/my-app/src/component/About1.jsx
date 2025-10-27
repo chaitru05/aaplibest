@@ -7,7 +7,7 @@ import "../style/about1.css"
 
 const About1 = () => {
   const { language } = useLanguage()
-  const t = translations.about[language]
+  const t = translations.about1[language]
 
   const [ref, inView] = useInView({
     triggerOnce: true,
@@ -25,37 +25,62 @@ const About1 = () => {
   }
 
   return (
+    <>
+    <div className="about1-top-svg">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 1440 150"
+      preserveAspectRatio="none"
+    >
+      <path
+        fill="none"
+        stroke="#f9b233"   // Yellow stroke
+        strokeWidth="6"
+        d="M0,100 C300,0 600,200 900,100 C1150,30 1350,150 1440,80"
+      />
+      <path
+        fill="none"
+        stroke="#e63946"   // Red stroke
+        strokeWidth="4"
+        d="M0,120 C300,40 600,240 900,120 C1150,60 1350,180 1440,100"
+      />
+    </svg>
+  </div>
     <section id="about1" className="about1">
-      <div className="about1-container" ref={ref}>
-        <div className="about1-content">
-          {/* Text Section */}
-          <motion.div
-            className="about1-text"
-            variants={textVariants}
-            initial="hidden"
-            animate={inView ? "visible" : "hidden"}
-          >
-            <h3>BEST is not just a bus, it’s a movement that keeps Mumbai moving.</h3>
-            <p>Aapli BEST Aaplyachsathi is a non-political, non-profit organization working in the interest of the BEST passanger and to improve the transport system in Mumbai and the overall welfare of MMR region.
-The content provided on this website  is for general informational and awareness purposes only. While we strive to keep the information up to date and accurate, we make no representations or warranties of any kind, express or implied, about the completeness, accuracy, reliability, or suitability of the content found on this site.</p>
-          </motion.div>
+  {/* Decorative SVG line at the top */}
+  
 
-          {/* Image Section */}
-          <motion.div
-            className="about1-image"
-            variants={imageVariants}
-            initial="hidden"
-            animate={inView ? "visible" : "hidden"}
-          >
-            <img
-              src="about-busimg.jpeg"
-              alt="BEST Bus"
-              style={{ width: '700px', height: '350px', objectFit: 'cover' }}
-            />
-          </motion.div>
-        </div>
-      </div>
-    </section>
+  {/* Your existing content */}
+  <div className="about1-container" ref={ref}>
+    <div className="about1-content">
+      <motion.div
+        className="about1-text"
+        variants={textVariants}
+        initial="hidden"
+        animate={inView ? "visible" : "hidden"}
+      >
+        <h3> {t.heading}</h3>
+        <p>
+          {t.description }
+        </p>
+      </motion.div>
+
+      <motion.div
+        className="about1-image"
+        variants={imageVariants}
+        initial="hidden"
+        animate={inView ? "visible" : "hidden"}
+      >
+        <img
+          src="about-busimg.jpeg"
+          alt="BEST Bus"
+          style={{ width: '700px', height: '350px', objectFit: 'cover' }}
+        />
+      </motion.div>
+    </div>
+  </div>
+</section>
+</>
   )
 }
 

@@ -19,11 +19,13 @@ export const translations = {
   },
   hero: {
     en: {
-      tagline: "Aamhi Aaplya Sobatch Aahot",
+      heading: "Aapli Best",
+      tagline: " 'Aamhi Aaplya Sobatch Aahot' ",
       subtitle: "Service organization working as the link between passengers and workers of Best",
     },
     mr: {
-      tagline: "मुंबईची जीवनरेषा",
+      heading: "आपली बेस्ट",
+      tagline: "आम्ही आपल्यासोबतच आहोत",
       subtitle: "बेस्ट बसचे प्रवासी आणि कामगार यांच्यातील दुवा म्हणून काम करणारी सेवा संस्था",
     },
   },
@@ -31,16 +33,25 @@ export const translations = {
     en: {
       title: "About Us",
       heading: "Uniting Passengers and Workers, Preserving Mumbai's Lifeline.",
-      description:
-        "Welcome to Aapli BEST Aaplyachsathi, a dedicated NGO working as a bridge between passengers and workers of Mumbai's iconic BEST buses. Our mission is clear – to oppose privatization, protect the rights of stakeholders, and preserve the legacy of BEST as the true lifeline of Mumbai.",
+      description: "Welcome to Aapli BEST Aaplyachsathi, a passionate and people-driven NGO dedicated to strengthening the bond between the passengers and workers of Mumbai’s iconic BEST buses. For decades, the BEST has been more than just a transport service it has been the heartbeat of Mumbai, carrying millions every day with reliability, care, and dignity. At Aapli BEST Aaplyachsathi, we stand firmly committed to safeguarding this legacy by opposing privatization, ensuring fair treatment and rights for all stakeholders, and amplifying the voices of both commuters and employees.",
       experience: "Years of Experience",
     },
     mr: {
       title: "आमच्याबद्दल",
       heading: "प्रवासी आणि कर्मचारी यांचं एकत्र बंधन – मुंबईच्या जीवनवाहिनीचं संरक्षण.",
       description:
-        "आपली बेस्ट आप्ल्याचसाठी मध्ये आपले स्वागत आहे, मुंबईच्या प्रतिष्ठित बेस्ट बसेसचे प्रवासी आणि कामगार यांच्यातील पूल म्हणून काम करणारी एक समर्पित एनजीओ. आमचे ध्येय स्पष्ट आहे – खाजगीकरणाला विरोध करणे, भागधारकांच्या हक्कांचे संरक्षण करणे आणि मुंबईची खरी जीवनरेषा म्हणून बेस्टचा वारसा जपणे.",
+        "आपले स्वागत आहे, एक उत्साही आणि लोककेंद्री स्वयंसेवी संस्था (NGO) जी मुंबईच्या प्रसिद्ध बेस्ट बस प्रवासी आणि कामगार यांच्यातील नातं अधिक मजबूत करण्यासाठी समर्पित आहे.दशकानुदशके, बेस्ट ही केवळ एक वाहतूक सेवा नसून — ती मुंबईचं हृदय राहिली आहे, जी दररोज लाखो प्रवाशांना विश्वासार्हतेने, काळजीपूर्वक आणि सन्मानाने वाहून नेते. आपली बेस्ट आपल्याचसाठी येथे, आम्ही या वारशाचे संरक्षण करण्यासाठी ठामपणे वचनबद्ध आहोत खाजगीकरणाला विरोध करण्यासाठी, सर्व भागधारकांना न्याय्य वागणूक आणि हक्क सुनिश्चित करण्यासाठी, तसेच प्रवासी आणि कर्मचारी दोघांच्याही आवाजाला अधिक बळकटी देण्यासाठी.",
       experience: "वर्षांचा अनुभव",
+    },
+  },
+  about1: {
+    en: {
+      heading: "BEST is not just a bus, it’s a movement that keeps Mumbai moving.",
+      description: "Aapli BEST Aaplyachsathi is a non-political, non-profit organization working in the interest of the BEST passenger and to improve the transport system in Mumbai and the overall welfare of MMR region. The content provided on this website is for general informational and awareness purposes only. While we strive to keep the information up to date and accurate, we make no representations or warranties of any kind, express or implied, about the completeness, accuracy, reliability, or suitability of the content found on this site.",
+    },
+    mr: {
+      heading: "बेस्ट ही फक्त बस नाही, ती मुंबईला चालू ठेवणारी एक चळवळ आहे",
+      description: "आपली बेस्ट आपल्याचसाठी ही एक अपक्ष (non-political) आणि नाफा न कमावणारी (non-profit) संस्था आहे, जी बेस्ट प्रवाशांच्या हितासाठी, तसेच मुंबईतील वाहतूक व्यवस्था सुधारण्यासाठी आणि संपूर्ण मुंबई महानगर प्रदेशाच्या (MMR) सर्वांगीण कल्याणासाठी कार्य करते. या वेबसाइटवरील माहिती ही सामान्य माहिती आणि जनजागृतीसाठी देण्यात आलेली आहे. आम्ही ही माहिती अद्ययावत आणि अचूक ठेवण्यासाठी प्रयत्नशील असलो तरी, या संकेतस्थळावर दिलेल्या माहितीच्या पूर्णता, अचूकता, विश्वासार्हता किंवा उपयुक्ततेबाबत आम्ही कोणत्याही प्रकारची स्पष्ट किंवा अप्रत्यक्ष हमी देत नाही.",
     },
   },
   team: {
@@ -67,7 +78,7 @@ export const translations = {
       ],
     },
     mr: {
-      title: "आमचे काम",
+      title: "आमची कामे",
       categories: [
         "मार्ग विकास आणि वकिली",
         "सार्वजनिक जागरूकता आणि संवाद",
@@ -80,40 +91,25 @@ export const translations = {
   volunteer: {
     en: {
       heading: "Join Our Community Impact Initiative",
-      description:
-        "Be part of the change you want to see in Mumbai's public transportation system. Your contribution can make a real difference in connecting communities and improving lives.",
       button: "Become a Volunteer",
-      callToAction: "Ready to make an impact?",
+     
     },
     mr: {
       heading: "आमच्या समुदायिक प्रभाव उपक्रमात सामील व्हा",
-      description:
-        "मुंबईच्या सार्वजनिक वाहतूक व्यवस्थेत तुम्हाला पाहायचा असलेल्या बदलाचा भाग व्हा. तुमचे योगदान समुदायांना जोडण्यात आणि जीवन सुधारण्यात खरा फरक करू शकते.",
       button: "स्वयंसेवक व्हा",
-      callToAction: "प्रभाव निर्माण करण्यासाठी तयार आहात?",
+   
     },
   },
   feedback: {
     en: {
-      title: "Your Voice Matters",
-      
-      description1:
-        "Every passenger’s experience matters. By sharing your feedback—whether it’s about great service or challenges you faced—you help us make Mumbai’s public transport safer, more comfortable, and more reliable. Your voice not only helps us improve but also allows us to recognize and celebrate the dedication of our transport staff.",
-      
-      button: "SHARE YOUR EXPERIENCE",
-      imageAlt1: "Passengers using public transportation",
-      imageAlt2: "Modern BEST bus service",
+      heading:"Help Us Improve Your Daily Commute",
+      description:"To make your daily commute smoother and more comfortable, we value your feedback. By submitting this form, your concern, suggestion, or appreciation will be registered with the BEST Undertaking. You will receive an acknowledgment email with a unique Case ID for your submission. Your inputs will be securely stored in our database, and the details will be shared with the concerned department via email for necessary action.",
+      button:"Submit Form",
     },
     mr: {
-      title: "तुमचा आवाज बदल घडवतो",
-      subtitle: "मुंबईसाठी एक चांगला वाहतूक अनुभव तयार करण्यात आम्हाला मदत करा",
-      description1:
-        "आम्ही मानतो की प्रत्येक प्रवाशाचा अनुभव महत्त्वाचा आहे. तुमचा अभिप्राय आमच्या सतत सुधारणा प्रयत्नांचा आधारस्तंभ आहे, जो आम्हाला सर्व मुंबईकरांसाठी सुरक्षित, अधिक आरामदायक आणि विश्वसनीय सार्वजनिक वाहतूक सेवा निर्माण करण्यात मदत करतो.",
-      description2:
-        "तुम्ही उत्कृष्ट सेवा पाहिली असो किंवा तुमच्या प्रवासादरम्यान आव्हानांचा सामना केला असो, आम्ही तुमच्या दृष्टिकोनाची कदर करतो. तुमची अंतर्दृष्टी आम्हाला चिंतांचे त्वरित निराकरण करण्यात आणि आमच्या वाहतूक कर्मचाऱ्यांच्या समर्पणाचा गौरव करण्यात मदत करते.",
-      button: "तुमचा अनुभव सामायिक करा",
-      imageAlt1: "सार्वजनिक वाहतूक वापरणारे प्रवासी",
-      imageAlt2: "आधुनिक बेस्ट बस सेवा",
+      heading:"आपला प्रवास अधिक सुखद करण्यास आम्हाला मदत करा",
+      description:"आपला दैनंदिन प्रवास अधिक सोयीस्कर आणि सुखद होण्यासाठी आम्ही आपला अभिप्राय महत्त्वाचा मानतो. हा फॉर्म सबमिट केल्यानंतर, आपली तक्रार, सूचना किंवा प्रशंसा बेस्ट उपक्रमाकडे नोंदवली जाईल. आपल्याला याबाबत एक केस आयडी (Case ID) असलेला ईमेल प्राप्त होईल. आपली माहिती आमच्या डेटाबेसमध्ये सुरक्षितरीत्या साठवली जाईल आणि संबंधित विभागाला ईमेलद्वारे पाठवली जाईल, जेणेकरून आवश्यक ती कारवाई करता येईल.",
+      button:"अर्ज सादर करा",
     },
   },
   footer: {

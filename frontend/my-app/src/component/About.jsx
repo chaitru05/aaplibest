@@ -93,21 +93,17 @@ const About = () => {
               <span className="text">{t.experience}</span>
             </div>
           </motion.div>
-
+              
           <motion.div
             className="about-text"
             variants={textVariants}
             initial="hidden"
             animate={inView ? "visible" : "hidden"}
           >
-            <motion.h3 variants={itemVariants}>{t.heading}</motion.h3>
+          <motion.h3 variants={itemVariants}>{t.heading}</motion.h3>
 
-            <motion.p variants={itemVariants}>
-            Welcome to Aapli BEST Aaplyachsathi, a passionate and people-driven NGO dedicated to strengthening the bond between the passengers and workers of Mumbai’s iconic BEST buses.
-
-For decades, the BEST has been more than just a transport service — it has been the heartbeat of Mumbai, carrying millions every day with reliability, care, and dignity. At Aapli BEST Aaplyachsathi, we stand firmly committed to safeguarding this legacy by opposing privatization, ensuring fair treatment and rights for all stakeholders, and amplifying the voices of both commuters and employees.
-
- </motion.p>
+          <motion.p variants={itemVariants}>   {t.description }
+            </motion.p>
           </motion.div>
         </div>
       </div>

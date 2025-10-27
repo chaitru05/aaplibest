@@ -1,175 +1,404 @@
-.hero {
-  height: 100vh;
-  background: url('Route-hero.jpeg') center/cover;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: white;
-}
-
-.hero-overlay {
-  max-width: 800px;
-  padding: 0 2rem;
-}
-
-.hero-title-route {
-  font-size: 3rem;
-  font-weight: 800;
-  margin-bottom: 250px;
-  
-  color: #ffffff;
-}
-
-
-
-
-/* Content Container */
-.content-container {
-  background-color: white;
-  padding: 0;
-}
-
-
-.achievement-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0;
-  align-items: center;
-  background: white;
-  min-height: 400px;
-}
-
-.right-align .achievement-content {
-  grid-template-columns: 1fr 1fr;
-}
-
-.right-align .text-content {
-  order: 2;
-}
-
-.right-align .image-content {
-  order: 1;
-}
-
-/* Text Content */
-.text-content {
-  padding: 4rem;
+.route-section {
+  position: relative;
+  min-height: 600px;
+  height: 80vh;
+  background-color: #f9c85d;
+  overflow: hidden;
+  margin-top: 100px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  height: 100%;
 }
 
-.achievement-title {
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 1.5rem;
-  color: #DC2626;
-  line-height: 1.2;
+/* Image Mask */
+.route-image-mask-container {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 75%;
+  overflow: visible; /* allow white curve to extend */
 }
+.route-cont{
+  position: absolute;
+  height: 650px;
+  margin-top: -30px;
+  width: 55%;
+  border-radius: 500px;
+  border-width: 100px;
+ margin-left: 150px;
 
-.achievement-description {
-  font-size: 1.1rem;
-  line-height: 1.8;
-  color: #4B5563;
+  background-color: #eaa611;
 }
-
-/* Image Content */
-.image-content {
-  height: 400px;
+/* .route-cont2{
+  position: absolute;
+  height: 650px;
+  margin-top: -30px;
+  width: 55%;
+  border-radius: 500px;
+  border-width: 100px;
+  margin-left: 110px;
+  overflow: hidden;
+  background-color: #000000;
+} */
+.route-image-mask {
+  position: absolute;
+  right: -280px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: calc(100% + 280px);
+  height: 110%;
+  clip-path: ellipse(62% 70% at 78% 50%);
   overflow: hidden;
 }
 
-.achievement-image {
+.route-image-mask img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
 }
 
+/* White curved outline using pseudo-element */
+.route-image-mask::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 4px solid white;
+  border-radius: 50%;
+  clip-path: ellipse(72% 70% at 88% 50%);
+  pointer-events: none;
+  z-index: 2;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+}
 
-/* Responsive Design */
-@media (max-width: 1024px) {
-  .hero-title {
-    font-size: 3rem;
+/* SVG Decorative Curves */
+.route-accent-svg {
+  position: absolute;
+  bottom: 20px;
+  left: 5%;
+  width: 300px;
+  height: 150px;
+  opacity: 0.9;
+  z-index: 5;
+}
+
+/* Heading */
+.route-heading {
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 300;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: hsl(var(--primary-foreground));
+  margin: 0;
+  padding: 0;
+}
+
+.route-content-section {
+  position: relative;
+  z-index: 10;
+  max-width: 600px;
+  padding: 10rem 2rem;
+  margin-left: 50px;
+}
+
+.route-achievements {
+  background: linear-gradient(135deg, #fefce8 0%, #fef3c7 100%); 
+  padding: 80px 20px;
+  height: 650px;
+}
+
+.achievements-container {
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.achievements-heading {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 60px;
+  line-height: 1.2;
+}
+
+.content-layout {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.video-section {
+  position: relative;
+  flex-shrink: 0;
+  width: 480px;
+  height: 580px;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.video-section img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.video-section:hover img {
+  transform: scale(1.05);
+}
+
+.play-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease;
+}
+
+.video-section:hover .play-overlay {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.play-icon {
+  color: white;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
+  transition: transform 0.3s ease;
+}
+
+.video-section:hover .play-icon {
+  transform: scale(1.1);
+}
+
+.achievements-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.achievement-card {
+  background: white;
+  border: 3px solid #000000;
+  border-radius: 12px;
+  padding: 24px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.achievement-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card-title-ach {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+
+.card-description-ach {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #181515;
+  margin: 0;
+}
+
+@media (max-width: 1400px) {
+  .content-layout {
+    flex-direction: column;
   }
-  
-  .hero-subtitle {
-    font-size: 1.3rem;
+
+  .video-section {
+    width: 100%;
+    height: 500px;
   }
-  
-  .achievement-content {
-    gap: 0;
+
+  .achievements-grid {
+    width: 100%;
   }
-  
-  .text-content {
-    padding: 3rem;
+}
+
+@media (max-width: 900px) {
+  .achievements-grid {
+    grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 768px) {
-  .hero-title {
-    font-size: 2.5rem;
+  .route-achievements {
+    padding: 60px 16px;
   }
-  
-  .hero-subtitle {
-    font-size: 1.2rem;
+
+  .achievements-heading {
+    font-size: 2rem;
+    margin-bottom: 40px;
   }
-  
-  .hero-description {
-    font-size: 1rem;
+
+  .content-layout {
+    gap: 30px;
   }
-  
-  .achievement-content {
-    grid-template-columns: 1fr;
-    gap: 0;
+
+  .video-section {
+    height: 400px;
   }
-  
-  .right-align .text-content,
-  .right-align .image-content {
-    order: unset;
+
+  .achievement-card {
+    padding: 20px;
   }
-  
-  .achievement-title {
-    font-size: 1.75rem;
+
+  .card-title {
+    font-size: 1.125rem;
   }
-  
-  .achievement-description {
-    font-size: 1rem;
+
+  .card-description {
+    font-size: 0.9rem;
   }
-  
-  .text-content {
-    padding: 2rem;
-  }
-  
-  .image-content {
-    height: 300px;
-  }
-  
 }
 
 @media (max-width: 480px) {
-  .hero-overlay {
-    padding: 0 1rem;
+  .achievements-heading {
+    font-size: 1.75rem;
   }
-  
-  .hero-title {
-    font-size: 2rem;
+
+  .video-section {
+    height: 300px;
   }
-  
-  .achievement-section {
-    padding: 0 1rem;
-  }
-  
-  .text-content {
-    padding: 2rem 1.5rem;
-  }
-  
-  .achievement-title {
-    font-size: 1.5rem;
-  }
-  
-  .footer {
-    padding: 2rem 1rem;
+
+  .achievement-card {
+    padding: 18px;
   }
 }
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .route-image-mask-container { width: 70%; }
+
+  .route-image-mask {
+    right: -200px;
+    width: calc(100% + 200px);
+  }
+}
+
+@media (max-width: 768px) {
+  .route-image-mask-container {
+    width: 100%;
+    height: 50%;
+    top: auto;
+    bottom: 0;
+  }
+
+  .route-image-mask {
+    clip-path: ellipse(70% 55% at 50% 85%);
+    top: auto;
+    bottom: -100px;
+    right: 0;
+    transform: none;
+    height: calc(100% + 100px);
+    width: 100%;
+  }
+
+  .route-accent-svg {
+    bottom: 10px;
+    width: 180px;
+    height: 100px;
+  }
+}
+.route-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  color: #222;
+  padding: 5rem 3rem;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+/* LEFT SIDE - grid of images */
+.route-left {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.route-card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas:
+    "img1 img2"
+    "wide wide";
+  gap: 1rem;
+}
+
+.route-card {
+ 
+  border-radius: 16px;
+  overflow: hidden;
+
+  transition: transform 0.3s ease;
+}
+
+.route-card:hover {
+  transform: translateY(-4px);
+}
+
+.route-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.route-card.wide {
+  grid-area: wide;
+}
+
+/* RIGHT SIDE - text content */
+.route-right {
+  flex: 1;
+  max-width: 500px;
+  background-color: #ffffff;
+  border-left: 30px solid #f9c85d;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.route-right h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #48010b;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+.route-right p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+
+
+/* Responsive layout */
+@media (max-width: 900px) {
+  .route-wrapper {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .route-right {
+    border-left: none;
+    border-top: 6px solid #e60023;
+  }
+}
+
+
+
+
