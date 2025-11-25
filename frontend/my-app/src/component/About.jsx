@@ -95,16 +95,26 @@ const About = () => {
           </motion.div>
               
           <motion.div
-            className="about-text"
-            variants={textVariants}
-            initial="hidden"
-            animate={inView ? "visible" : "hidden"}
-          >
-          <motion.h3 variants={itemVariants}>{t.heading}</motion.h3>
+              className="about-text"
+              variants={textVariants}
+              initial="hidden"
+              animate={inView ? "visible" : "hidden"}
+            >
 
-          <motion.p variants={itemVariants}>   {t.description }
-            </motion.p>
-          </motion.div>
+              <motion.h3 variants={itemVariants}>{t.heading}</motion.h3>
+
+              {/* Desktop Full Text */}
+              <motion.p className="desktop-text" variants={itemVariants}>
+                {t.description}
+              </motion.p>
+
+              {/* Mobile Short Text */}
+              <motion.p className="mobile-text" variants={itemVariants}>
+                {t.shortdesciption}
+              </motion.p>
+
+            </motion.div>
+
         </div>
       </div>
     </section>

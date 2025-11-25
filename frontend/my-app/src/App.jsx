@@ -17,10 +17,11 @@ import { translations } from "./data/translations"
 import About1 from "./component/About1.jsx"
 import Cnetric from "./component/Cnetric.jsx"
 import Routedev from "./component/Routedev.jsx"
-import Public from "./component/Public.jsx"
 import Policyacc from "./component/Policyacc.jsx"
-import Passenger from "./component/Passenger.jsx"
 import HelpLineIcon from "./component/HelpLineIcon.jsx"
+import ComplaintForm from "./component/ComplaintForm.jsx"
+import PassengerIntervention from "./component/PassengerIntervention.jsx"
+import PublicAwareness from "./component/PublicAwareness.jsx"
 
 function HomePage() {
   const { language } = useLanguage()
@@ -67,18 +68,28 @@ function HomePage() {
         {/* Slanted overlay with text */}
         <div className="hero-content-overlay">
           <div className="hero-content">
-            <div
-              className={`hero-text-container ${
-                isLoaded ? "animate-text-fade" : "text-hidden"
-              }`}
-            > <h className="heading-hero">{t.heading}</h>
-              <p className="hero-tagline">{t.tagline} </p>
-                
-             <p className="hero-subtitle">{t.subtitle}
-               </p>
-                
-              
-            </div>
+            <div className={`hero-text-container ${isLoaded ? "visible" : ""}`}>
+  
+            <h
+              className={`heading-hero ${isLoaded ? "fade-item-1" : "text-hidden"}`}
+            >
+              {t.heading}
+            </h>
+
+            <p
+              className={`hero-tagline ${isLoaded ? "fade-item-2" : "text-hidden"}`}
+            >
+              {t.tagline}
+            </p>
+
+            <p
+              className={`hero-subtitle ${isLoaded ? "fade-item-3" : "text-hidden"}`}
+            >
+              {t.subtitle}
+            </p>
+          </div>
+
+
           </div>
         </div>
 
@@ -111,7 +122,7 @@ function HomePage() {
         <VolunteerSection />
       </section>
       <section id="contact">
-        <FeedbackPage />
+        <ComplaintForm /> 
       </section>
       <Footer />
     </>
@@ -131,9 +142,9 @@ function App() {
           {/* Category pages */}
           <Route path="/route-development" element={<Routedev/>} />
           <Route path="/centric" element={<Cnetric/>} />
-          <Route path="/public" element={<Public/>} />
+          <Route path="/public" element={<PublicAwareness/>} />
           <Route path="/policy" element={<Policyacc/>} />
-          <Route path="/passenger" element={<Passenger/>} />
+          <Route path="/passenger" element={<PassengerIntervention />} />
          
         </Routes>
         <HelpLineIcon />

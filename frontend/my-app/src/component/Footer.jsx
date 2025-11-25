@@ -9,18 +9,21 @@ export default function Footer() {
 
   return (
     <footer className="footer">
-     
       <div className="footer-topbar"></div>
 
       <div className="footer-inner">
-       
+        
+        {/* BRAND */}
         <div className="footer-brand">
           <div className="footer-logo">
             <div className="footer-logo-icon">✦</div>
             <span className="footer-logo-text">Aapli Best.</span>
           </div>
           <p className="footer-description">
-            Aapli BEST Aaplyachsathi is a people-driven NGO dedicated to uniting passengers and workers of Mumbai’s iconic BEST buses. We strive to preserve this lifeline of the city by promoting fairness, opposing privatization, and protecting the rights and dignity of all who keep Mumbai moving.
+            {t.description}
+          </p>
+          <p className="mobile-text-footer">
+            {t.shortdesciption}
           </p>
           <div className="footer-social">
             <a href="https://www.facebook.com/share/1DQaeAjxsr/" target="_blank" rel="noopener noreferrer" className="footer-social-icon">📘</a>
@@ -30,30 +33,28 @@ export default function Footer() {
           </div>
         </div>
 
+        {/* LINKS */}
         <div className="footer-links">
-          <h3>Quick Links</h3>
+          <h3>{t.quickLinks.title}</h3>
           <ul>
-            <li><a href="https://bestundertaking.com/transport.asp" target="_blank" rel="noopener noreferrer">BEST Transport</a></li>
-            
+            <li><a href="https://bestundertaking.com/transport.asp" target="_blank" rel="noopener noreferrer">{t.quickLinks.bestTransport}</a></li>
           </ul>
         </div>
 
-        {/* RIGHT: Contact Info */}
+        {/* CONTACT */}
         <div className="footer-contact">
-          <h3>Contact Us</h3>
-          <p><strong>Helpline:</strong> <a href="tel:1800227550">1800-227-550 (Toll Free)</a></p>
-          <p><strong>Email:</strong> <a href="mailto:transport@bestundertaking.com">transport@bestundertaking.com</a></p>
-          
+          <h3>{t.contact.title}</h3>
+          <p><strong>{t.contact.helpline}:</strong> <a href="tel:1800227550">1800-227-550 (Toll Free)</a></p>
+          <p><strong>{t.contact.email}:</strong> <a href="mailto:transport@bestundertaking.com">transport@bestundertaking.com</a></p>
         </div>
       </div>
 
-      {/* BOTTOM: Copyright */}
       <div className="footer-bottom">
-        <p>© 2024 Aapli Best. All Rights Reserved.</p>
+        <p>{t.copyright}</p>
         <div className="footer-legal">
-          <a href="#">Privacy Policy</a>
+          <a href="#">{t.privacy}</a>
           <span>|</span>
-          <a href="#">Cookie Policy</a>
+          <a href="#">{t.cookies}</a>
         </div>
       </div>
     </footer>

@@ -101,6 +101,7 @@
   line-height: 1.5;
   font-size: 1.2rem;
   font-family: "Inter", sans-serif;
+  text-align: justify;
 }
 
 .about-features {
@@ -220,7 +221,7 @@
 /* Mobile (≤ 576px) */
 @media (max-width: 576px) {
   .about {
-    padding: 2rem 0;
+    padding: 0.5rem 0;
   }
 
   .about-h2 {
@@ -299,5 +300,34 @@
 
   .about-experience {
     padding: 0.8rem;
+  }
+}
+
+/* Default: Desktop */
+.desktop-text {
+  display: block;
+}
+
+.mobile-text {
+  display: none;
+}
+
+/* Mobile View (≤ 576px) */
+@media (max-width: 576px) {
+  .desktop-text {
+    display: none;
+  }
+
+  .mobile-text {
+    display: block;
+    font-size: 3 rem;
+    line-height: 1.5;
+    text-align: justify; /* even text distribution */
+  }
+
+  .about-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 }

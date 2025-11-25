@@ -27,12 +27,12 @@ const FeedbackPage = () => {
         {/* Central Content */}
         <div className="central-content">
           <h1 className="main-title">{t.heading}</h1>
-          <p className="subtitle">{t.subtitle}</p>
+       
 
           <div className="content-text">
             <p>{t.description}</p>
 
-            <p>{t.description2}</p>
+      
           </div>
 
           <button className="feedback-button" onClick={handleFeedbackClick}>

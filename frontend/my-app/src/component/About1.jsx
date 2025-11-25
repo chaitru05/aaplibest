@@ -23,7 +23,14 @@ const About1 = () => {
     hidden: { opacity: 0, scale: 0.9 },
     visible: { opacity: 1, scale: 1, transition: { duration: 1 } },
   }
-
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8 },
+    },
+  }
   return (
     <>
     <div className="about1-top-svg">
@@ -59,10 +66,16 @@ const About1 = () => {
         initial="hidden"
         animate={inView ? "visible" : "hidden"}
       >
-        <h3> {t.heading}</h3>
-        <p>
-          {t.description }
-        </p>
+      <motion.h3 variants={itemVariants}>{t.heading}</motion.h3>
+        
+      <motion.p className="desktop-text" variants={itemVariants}>
+        {t.description}
+      </motion.p>
+
+      {/* Mobile Short Text */}
+      <motion.p className="mobile-text" variants={itemVariants}>
+        {t.shortdesciption}
+      </motion.p>
       </motion.div>
 
       <motion.div

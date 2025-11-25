@@ -159,4 +159,9 @@
   .gallery-title {
     font-size: 2rem;
   }
+  .slider-container {
+  
+  height: 70vh;
+  
+}
 }

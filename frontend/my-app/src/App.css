@@ -128,9 +128,17 @@ section {
   gap: 0.5rem;
 }
 
-.text-hidden {
-  opacity: 0;
+.hero-text-container {
+  opacity: 0;                 /* invisible at start */
+  transform: translateY(20px);
+  transition: opacity 5s ease-out, transform 0.8s ease-out;
 }
+
+.hero-text-container.visible {
+  opacity: 1;                 /* becomes visible */
+  transform: translateY(0);
+}
+
 
 .hero-tagline {
   font-size: 2.5rem;
@@ -238,17 +246,11 @@ section {
   margin: 0;
 }
 
-/* Animations */
-@keyframes textFade {
-  0% {
-    opacity: 0;
-    transform: translateY(15px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.text-hidden {
+  opacity: 0 !important;
+  visibility: hidden;
 }
+
 
 @keyframes busSlide {
   0% {
@@ -261,8 +263,9 @@ section {
   }
 }
 
+
 .animate-text-fade {
-  animation: textFade 1s ease-out forwards;
+  animation: textFade 2s ease-out forwards;
 }
 
 .animate-bus-slide {
@@ -274,6 +277,7 @@ section {
   transform: scale(1.05);
   transition: transform 0.3s ease;
 }
+
 
 /* Fallback for browsers without backdrop blur */
 @supports not (backdrop-filter: blur(12px)) {
@@ -343,6 +347,7 @@ section {
     margin: 0;
     text-align: center;
     padding: 1rem;
+    margin-right:50px ;
   }
 
   .hero-text-container {
@@ -399,6 +404,12 @@ section {
 }
 
 @media (max-width: 480px) {
+  .hero-section{
+    margin-top: 80px;
+  }
+  .my_div {
+  display: none;
+}
   .heading-hero {
     font-size: 28px;
   }

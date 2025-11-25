@@ -1,3 +1,6 @@
+/* =========================================================
+   MAIN CONTAINER
+   ========================================================= */
 .best-vitthal-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -5,6 +8,9 @@
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
+/* =========================================================
+   PAGE HEADER
+   ========================================================= */
 .page-header {
   text-align: center;
   margin-bottom: 40px;
@@ -16,17 +22,18 @@
   color: #000000;
   margin: 0;
   line-height: 1.2;
-  text-wrap: balance;
 }
 
 @media (max-width: 768px) {
   .main-title {
-    font-size: 2.2rem;
+    font-size: 2rem;
     padding: 0 10px;
   }
 }
 
-/* Updated description section styles for better text arrangement */
+/* =========================================================
+   DESCRIPTION SECTION
+   ========================================================= */
 .description-section {
   text-align: center;
   margin-bottom: 60px;
@@ -55,13 +62,12 @@
   line-height: 1.7;
   color: #374151;
   margin: 0;
-  text-wrap: pretty;
 }
 
 .description-conclusion {
   font-size: 1.125rem;
   line-height: 1.7;
-  color: #000000;
+  color: #000;
   margin: 0;
   font-weight: 500;
   font-style: italic;
@@ -70,66 +76,46 @@
 @media (max-width: 768px) {
   .description-section {
     margin-bottom: 40px;
-    padding: 0 15px;
-  }
-
-  .description-content {
-    gap: 16px;
   }
 
   .description-intro {
-    font-size: 1.125rem;
+    font-size: 1.1rem;
   }
 
-  .description-main {
+  .description-main,
+  .description-conclusion {
     font-size: 1rem;
     line-height: 1.6;
   }
-
-  .description-conclusion {
-    font-size: 1rem;
-  }
 }
 
-.content-section-vithal {
-  display: flex;
-  flex-direction: column;
-}
-
+/* =========================================================
+   VIDEO CARDS SECTION
+   ========================================================= */
 .cards-container-vithal {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 30px;
   justify-items: center;
-}
-
-@media (max-width: 768px) {
-  .cards-container {
-    grid-template-columns: 1fr;
-    gap: 30px;
-    padding: 0 10px;
-  }
 }
 
 .project-card {
   background: white;
   border-radius: 16px;
   overflow: hidden;
- 
   width: 100%;
-  max-width: 400px;
-  height: 400px;
+  max-width: 380px;
+  transition: transform 0.3s ease;
 }
 
 .project-card:hover {
   transform: translateY(-4px);
- 
 }
 
 .card-image-container {
   position: relative;
   width: 100%;
-  height: 400px;
+  height: 200px;
   overflow: hidden;
   cursor: pointer;
 }
@@ -138,7 +124,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
- 
+  transition: transform 0.3s ease;
 }
 
 .card-image-container:hover .card-image {
@@ -147,10 +133,7 @@
 
 .video-overlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -163,109 +146,31 @@
   opacity: 1;
 }
 
-.play-button {
-  transform: scale(1);
-  transition: transform 0.3s ease;
-}
-
-.play-button:hover {
-  transform: scale(1.1);
-}
-
 .card-content {
-  padding: 24px;
+  padding: 18px;
 }
 
 .card-title {
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   font-weight: 600;
   color: #1f2937;
-  margin: 0;
   text-align: center;
-  line-height: 1.4;
 }
 
-/* Video Modal Styles */
-.video-modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.9);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1000;
-  padding: 20px;
-}
-
-.video-modal-content {
-  position: relative;
-  max-width: 90vw;
-  max-height: 90vh;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.close-button {
-  position: absolute;
-  top: -50px;
-  right: 0;
-  background: none;
-  border: none;
-  color: white;
-  cursor: pointer;
-  padding: 10px;
-  z-index: 1001;
-  border-radius: 50%;
-  background: rgba(0, 0, 0, 0.5);
-  transition: background 0.3s ease;
-}
-
-.close-button:hover {
-  background: rgba(0, 0, 0, 0.8);
-}
-
-.modal-video {
-  width: 100%;
-  height: auto;
-  max-height: 80vh;
-  border-radius: 8px;
-}
-
-@media (max-width: 768px) {
-  .video-modal-content {
-    max-width: 95vw;
-    max-height: 95vh;
+/* MOBILE IMPROVEMENTS */
+@media (max-width: 480px) {
+  .card-image-container {
+    height: 150px;
   }
 
-  .close-button {
-    top: -40px;
-    right: -10px;
-  }
-
-  .modal-video {
-    max-height: 70vh;
+  .card-title {
+    font-size: 1.05rem;
   }
 }
 
-/* Loading and Error States */
-.card-image-container.loading {
-  background: #f3f4f6;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.card-image-container.loading::before {
-  content: "Loading...";
-  color: #6b7280;
-  font-size: 1rem;
-}
-/* BEST Day section with increased width and light yellow background */
+/* =========================================================
+   BEST DAY SECTION (Fully Responsive)
+========================================================= */
 .best-day-section {
   margin-top: 80px;
   padding: 80px 0;
@@ -275,8 +180,12 @@
   max-width: 1400px;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 100px;
 }
 
+/* =========================================================
+   CONTENT GRID
+========================================================= */
 .best-day-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -287,6 +196,9 @@
   padding: 0 60px;
 }
 
+/* =========================================================
+   TEXT AREA
+========================================================= */
 .best-day-text {
   display: flex;
   flex-direction: column;
@@ -311,50 +223,42 @@
   font-weight: 400;
 }
 
+/* =========================================================
+   MEDIA GRID
+========================================================= */
 .best-day-media {
   display: flex;
   justify-content: center;
 }
 
-/* Increased media grid size and image dimensions */
 .media-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: auto auto;
   gap: 20px;
   width: 100%;
   max-width: 500px;
 }
 
-.media-item:first-child {
-  grid-column: 1 / 3;
-  grid-row: 1;
-}
-
-.media-item:nth-child(2) {
-  grid-column: 1;
-  grid-row: 2;
-}
-
-.media-item:nth-child(3) {
-  grid-column: 2;
-  grid-row: 2;
-}
-
 .media-item {
-  background: white;
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 8px 25px -5px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.media-item:first-child {
+  grid-column: 1 / 3;
 }
 
 .media-item:hover {
   transform: translateY(-4px);
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15),
+              0 10px 10px -5px rgba(0, 0, 0, 0.1);
 }
 
-/* Increased image container heights for larger images */
+/* =========================================================
+   IMAGE CONTAINER
+========================================================= */
 .media-image-container {
   position: relative;
   width: 100%;
@@ -378,6 +282,9 @@
   transform: scale(1.05);
 }
 
+/* =========================================================
+   VIDEO OVERLAY + PLAY BUTTON
+========================================================= */
 .video-overlay {
   position: absolute;
   top: 0;
@@ -405,7 +312,9 @@
   transform: scale(1.1);
 }
 
-/* Mobile responsive styles */
+/* =========================================================
+   TABLET RESPONSIVE (max-width: 768px)
+========================================================= */
 @media (max-width: 768px) {
   .best-day-section {
     margin-top: 60px;
@@ -417,31 +326,33 @@
     grid-template-columns: 1fr;
     gap: 50px;
     padding: 0 30px;
+    text-align: center;
   }
 
   .best-day-title {
     font-size: 2.2rem;
-    text-align: center;
   }
 
   .best-day-description {
     font-size: 1.125rem;
-    text-align: center;
   }
 
   .media-grid {
-    max-width: 350px;
+    max-width: 360px;
   }
 
   .media-image-container {
-    height: 120px;
+    height: 130px;
   }
 
   .media-item:first-child .media-image-container {
-    height: 180px;
+    height: 200px;
   }
 }
 
+/* =========================================================
+   MOBILE RESPONSIVE (max-width: 480px)
+========================================================= */
 @media (max-width: 480px) {
   .best-day-content {
     padding: 0 20px;
@@ -457,5 +368,14 @@
 
   .media-grid {
     max-width: 300px;
+    gap: 15px;
+  }
+
+  .media-image-container {
+    height: 110px;
+  }
+
+  .media-item:first-child .media-image-container {
+    height: 170px;
   }
 }

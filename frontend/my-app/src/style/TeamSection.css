@@ -1,3 +1,35 @@
+/* Added smooth scroll animations for slide-in effects */
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Animation classes applied when section comes into view */
+.team-content.slide-in-left {
+  animation: slideInFromLeft 1.2s ease-out forwards;
+}
+
+.team-cards-section.slide-in-right {
+  animation: slideInFromRight 1.2s ease-out forwards;
+}
+
 .team-section {
   padding: 80px 20px;
   background: #670f0f;
@@ -41,6 +73,7 @@
   letter-spacing: 1px;
   line-height: 1.7;
   margin-bottom: 20px;
+  text-align: justify;
 }
 
 .view-all-link {
@@ -172,6 +205,15 @@
   color: #000;
   margin: 0;
   text-align: left;
+}
+
+.team-card-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #000;
+  margin: 5px 0 0 0;
+  text-align: left;
+  opacity: 0.85;
 }
 
 /* Hover Overlay */
@@ -370,7 +412,14 @@
 
   .team-description {
     font-size: 1rem;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
+    line-height: 1.6;
+  }
+
+  .team-content {
+    margin-left: 0;
+    padding-right: 0;
+    margin-right: 50px;
   }
 
   .team-cards-wrapper .team-card {
@@ -378,48 +427,145 @@
   }
 
   .team-carousel {
-    padding: 0 25px;
+    padding: 0 40px;
   }
 
   .nav-button {
-    width: 35px;
-    height: 35px;
+    width: 32px;
+    height: 32px;
   }
 
   .team-card {
-    height: 360px;
+    height: 300px;
+    max-width: 280px;
+    margin: 0 auto;
   }
 
   .team-card-image-container {
-    height: 240px;
+    height: 200px;
+  }
+
+  .team-card-name-box {
+    padding: 15px;
+  }
+
+  .team-card-name {
+    font-size: 1.1rem;
+  }
+
+  .team-card-title {
+    font-size: 0.85rem;
+  }
+
+  .team-card-overlay {
+    top: 200px;
+    height: 100px;
+    padding: 18px 15px;
+  }
+
+  .team-card:hover .team-card-overlay {
+    transform: translateY(-100px);
+    height: 200px;
+  }
+
+  .team-card-description {
+    font-size: 0.75rem;
+    line-height: 1.4;
+    margin-bottom: 12px;
+  }
+
+  .team-card-social {
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+
+  .social-link {
+    width: 28px;
+    height: 28px;
   }
 }
 
 /* Small Phones */
 @media (max-width: 480px) {
+  .team-content-wrapper{
+    margin-right: 20px;
+  }
+  .team-content.slide-in-left{
+    margin-right: 150px;
+  }
   .team-section {
     padding: 40px 10px;
   }
-
+  
   .team-title {
     font-size: 1.8rem;
+    margin-left: 10px;
   }
-
+ 
   .team-description {
-    font-size: 0.95rem;
-    line-height: 1.6;
-  }
-
-  .nav-button {
     display: none;
   }
 
+  .team-carousel {
+    padding: 0 35px;
+  }
+
+  .nav-button {
+    width: 30px;
+    height: 30px;
+  }
+
   .team-card {
-    height: 340px;
+    height: 400px;
+    max-width: 300px;
+  }
+
+  .team-card-image-container {
+    height: 350px;
+  }
+
+  .team-card-name-box {
+    padding: 12px;
+    height: 90px;
+  }
+
+  .team-card-name {
+    font-size: 1.5rem;
+  }
+
+  .team-card-title {
+    font-size: 1.3rem;
   }
 
   .team-card-overlay {
-    padding: 20px 15px;
+    top: 350px;
+    height: 95px;
+    
+  }
+
+  .team-card:hover .team-card-overlay {
+    transform: translateY(-95px);
+    height: 190px;
+  }
+
+  .team-card-description {
+    font-size: 0.7rem;
+    line-height: 1.3;
+    margin-bottom: 10px;
+  }
+
+  .team-card-social {
+    gap: 6px;
+  }
+
+  .social-link {
+    width: 26px;
+    height: 26px;
+  }
+
+  .social-link svg {
+    width: 14px;
+    height: 14px;
   }
 }
 
@@ -430,14 +576,68 @@
   }
 
   .team-description {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+
+  .team-carousel {
+    padding: 0 30px;
+  }
+
+  .nav-button {
+    width: 28px;
+    height: 28px;
   }
 
   .team-card {
-    height: 320px;
+    height: 260px;
+    max-width: 240px;
   }
 
   .team-card-image-container {
-    height: 220px;
+    height: 170px;
+  }
+
+  .team-card-name-box {
+    padding: 10px;
+  }
+
+  .team-card-name {
+    font-size: 0.95rem;
+  }
+
+  .team-card-title {
+    font-size: 0.75rem;
+  }
+
+  .team-card-overlay {
+    top: 170px;
+    height: 90px;
+    padding: 12px 10px;
+  }
+
+  .team-card:hover .team-card-overlay {
+    transform: translateY(-90px);
+    height: 180px;
+  }
+
+  .team-card-description {
+    font-size: 0.68rem;
+    line-height: 1.3;
+    margin-bottom: 8px;
+  }
+
+  .team-card-social {
+    gap: 5px;
+  }
+
+  .social-link {
+    width: 24px;
+    height: 24px;
+  }
+
+  .social-link svg {
+    width: 13px;
+    height: 13px;
   }
 }
