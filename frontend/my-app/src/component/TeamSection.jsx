@@ -13,6 +13,8 @@ const TeamSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isAutoPlaying, setIsAutoPlaying] = useState(true)
   const [isVisible, setIsVisible] = useState(false)
+  const [cardsPerView, setCardsPerView] = useState(3)
+
   const sectionRef = useRef(null)
 
   const teamMembers = [
@@ -26,7 +28,7 @@ const TeamSection = () => {
         en: "Founder and President",
         mr: "संस्थापक आणि अध्यक्ष",
       },
-      image: "/Rupesh.jpeg",
+      image: "/team/Rupesh.jpeg",
       description: {
         en: "Visionary leader with extensive experience in organizational development and strategic planning. Leading the organization with dedication and commitment.",
         mr: "संस्थात्मक विकास आणि धोरणात्मक नियोजनातील व्यापक अनुभव असलेले दूरदर्शी नेते. समर्पण आणि वचनबद्धतेने संस्थेचे नेतृत्व करत आहेत.",
@@ -48,7 +50,7 @@ const TeamSection = () => {
         en: "Secretary",
         mr: "सचिव",
       },
-      image: "/Siddesh Mhatre.jpeg",
+      image: "/team/siddeshM.jpeg",
       description: {
         en: "Dedicated secretary supporting organizational activities and maintaining effective communication channels with all stakeholders.",
         mr: "संस्थात्मक कार्यांना साहाय्य करणारे आणि सर्व संबंधित व्यक्तींशी प्रभावी संवाद राखणारे वचनबद्ध सचिव.",
@@ -70,7 +72,7 @@ const TeamSection = () => {
         en: "Information Technology and Social Media",
         mr: "माहिती तंत्रज्ञान व समाज माध्यम",
       },
-      image: "/Atharva.jpg",
+      image: "/team/athrav.jpeg",
       description: {
         en: "Technology specialist managing digital infrastructure and social media presence. Driving digital transformation and online engagement.",
         mr: "डिजिटल संरचना आणि सोशल मीडिया उपस्थिती व्यवस्थापित करणारे तंत्रज्ञान तज्ञ. डिजिटल परिवर्तन आणि ऑनलाइन सहभाग वाढवण्यासाठी वचनबद्ध.",
@@ -92,7 +94,7 @@ const TeamSection = () => {
         en: "Treasurer",
         mr: "खजिनदार",
       },
-      image: "/Siddesh Kanse.JPG",
+      image: "/team/Siddesh Kanse.JPG",
       description: {
         en: "Financial expert ensuring transparent and efficient management of organizational resources. Maintaining fiscal responsibility and accountability.",
         mr: "संस्थेच्या संसाधनांचे पारदर्शक आणि कार्यक्षम व्यवस्थापन करणारे आर्थिक तज्ञ. वित्तीय जबाबदारी आणि उत्तरदायित्व राखतात.",
@@ -114,7 +116,7 @@ const TeamSection = () => {
         en: "Vice President",
         mr: "उपाध्यक्ष",
       },
-      image: "/Kunal.jpg",
+      image: "/team/kunal.jpeg",
       description: {
         en: "Experienced professional supporting organizational growth and development initiatives. Committed to driving positive change in the community.",
         mr: "संस्थात्मक वाढ आणि विकास उपक्रमांना पाठिंबा देणारे अनुभवी व्यावसायिक. समुदायात सकारात्मक बदल घडवून आणण्यासाठी वचनबद्ध.",
@@ -158,7 +160,7 @@ const TeamSection = () => {
         en: "Information Technology and Social Media",
         mr: "माहिती तंत्रज्ञान व समाज माध्यम",
       },
-      image: "/Pratham.jpg",
+      image: "/team/prathmeahrege.jpeg",
       description: {
         en: "Digital marketing expert enhancing organizational visibility through strategic social media campaigns and technological solutions.",
         mr: "धोरणात्मक सोशल मीडिया मोहिमांद्वारे आणि तंत्रज्ञानात्मक उपायांद्वारे संस्थेची दृश्यता वाढवणारे डिजिटल मार्केटिंग तज्ञ.",
@@ -180,7 +182,7 @@ const TeamSection = () => {
         en: "Spokesperson",
         mr: "प्रवक्ता",
       },
-      image: "/Swapnil.jpg",
+      image: "/team/swapnilgaonkar.jpeg",
       description: {
         en: "Communication specialist representing the organization in public forums and media interactions. Building strong community relationships.",
         mr: "सार्वजनिक व्यासपीठांवर आणि माध्यमांमध्ये संस्थेचे प्रतिनिधित्व करणारे संवाद तज्ञ. मजबूत समुदाय संबंध निर्माण करण्यासाठी वचनबद्ध.",
@@ -202,7 +204,7 @@ const TeamSection = () => {
         en: "Spokesperson",
         mr: "प्रवक्ता",
       },
-      image: "/Gaurav 1.png",
+      image: "/team/gaurav.jpeg",
       description: {
         en: "Public relations expert managing organizational communications and stakeholder engagement. Promoting organizational mission and values.",
         mr: "संस्थात्मक संवाद आणि संबंधितांच्या सहभागाचे व्यवस्थापन करणारे जनसंपर्क तज्ञ. संस्थेचे उद्दिष्टे आणि मूल्ये प्रसारित करण्यासाठी कार्यरत.",
@@ -237,8 +239,24 @@ const TeamSection = () => {
       },
     },
   ]
+  useEffect(() => {
+  const handleResize = () => {
+    if (window.innerWidth <= 768) {
+      setCardsPerView(1)       // 📱 Mobile → 1 card
+    } else if (window.innerWidth <= 1024) {
+      setCardsPerView(2)       // 📱 Tablet → 2 cards
+    } else {
+      setCardsPerView(2)       // 💻 Desktop → 3 cards
+    }
+  }
 
-  const cardsPerView = 3
+  handleResize() // run on mount
+  window.addEventListener("resize", handleResize)
+
+  return () => window.removeEventListener("resize", handleResize)
+}, [])
+
+  // const cardsPerView = 2.5
   const maxIndex = Math.max(0, teamMembers.length - cardsPerView)
 
   useEffect(() => {
@@ -271,8 +289,8 @@ const TeamSection = () => {
     return () => clearInterval(interval)
   }, [maxIndex, isAutoPlaying])
 
-  const nextSlide = () => setCurrentIndex((prev) => (prev >= maxIndex ? 0 : prev + 1))
-  const prevSlide = () => setCurrentIndex((prev) => (prev <= 0 ? maxIndex : prev - 1))
+  const nextSlide = () => setCurrentIndex((prev) => (prev >= maxIndex ? 0 : prev + 2))
+  const prevSlide = () => setCurrentIndex((prev) => (prev <= 0 ? maxIndex : prev - 2))
 
   return (
     <section className="team-section" ref={sectionRef}>

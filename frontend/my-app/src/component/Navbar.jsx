@@ -1,32 +1,86 @@
 "use client"
 
-import { Link } from "react-scroll"
+// ==============================
+// Imports
+// ==============================
+
 import { useState } from "react"
-import { Mail, Facebook, Twitter, Instagram, Youtube, Globe,MessageCircle } from "lucide-react"
+
+// Smooth scroll navigation
+import { Link } from "react-scroll"
+
+// Icon library
+import {
+  Mail,
+  Facebook,
+  Twitter,
+  Instagram,
+  MessageCircle,
+  Globe,
+} from "lucide-react"
+
+// Language context (i18n)
 import { useLanguage } from "../contexts/LanguageContext"
+
+// Translation content
 import { translations } from "../data/translations"
+
+// Component styles
 import "../style/Navbar.css"
 
+
+// ==============================
+// Navbar Component
+// ==============================
 const Navbar = () => {
+
+  // --------------------------------
+  // State: Mobile Menu Toggle
+  // --------------------------------
   const [menuOpen, setMenuOpen] = useState(false)
+
+
+  // --------------------------------
+  // Language & Translations
+  // --------------------------------
   const { language, toggleLanguage, isMarathi } = useLanguage()
   const t = translations.navbar[language]
 
-  // Close menu on link click (for mobile UX)
-  const handleLinkClick = () => setMenuOpen(false)
 
+  // --------------------------------
+  // Handlers
+  // --------------------------------
+
+  // Close mobile menu after clicking a nav link
+  const handleLinkClick = () => {
+    setMenuOpen(false)
+  }
+
+
+  // ==============================
+  // JSX
+  // ==============================
   return (
     <div className="navbar-wrapper">
-      {/* Top Contact Bar */}
+
+      {/* =====================================
+         Top Contact & Social Bar
+         ===================================== */}
       <div className="top-bar">
         <div>
+
+          {/* Contact Info */}
           <div className="contact-info">
             <div className="contact-item">
               <Mail size={16} />
               <span>aaplibest@gmail.com</span>
             </div>
           </div>
+
+          {/* Language Toggle + Social Links */}
           <div className="social-links">
+
+            {/* Language Switch Button */}
             <button
               onClick={toggleLanguage}
               className="language-toggle"
@@ -35,11 +89,14 @@ const Navbar = () => {
               <Globe size={16} />
               <span>{isMarathi ? "ENG" : "मर"}</span>
             </button>
+
+            {/* Social Media Icons */}
             <a
               href="https://www.facebook.com/share/1DQaeAjxsr/"
               target="_blank"
               rel="noopener noreferrer"
               className="social-link"
+              aria-label="Facebook"
             >
               <Facebook size={24} />
             </a>
@@ -49,6 +106,7 @@ const Navbar = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="social-link"
+              aria-label="Twitter"
             >
               <Twitter size={24} />
             </a>
@@ -58,6 +116,7 @@ const Navbar = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="social-link"
+              aria-label="Instagram"
             >
               <Instagram size={24} />
             </a>
@@ -67,46 +126,120 @@ const Navbar = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="social-link"
+              aria-label="WhatsApp"
             >
-              <MessageCircle size={24}  />
+              <MessageCircle size={24} />
             </a>
 
           </div>
         </div>
       </div>
 
-      {/* Main Navbar */}
+
+      {/* =====================================
+         Main Navigation Bar
+         ===================================== */}
       <div className="navbar-container">
+
+        {/* Logo */}
         <div className="logo">
-          <img src="/logo.jpg" alt="Logo" />
+          <img src="/logo.jpg" alt="Aapli Best Logo" />
         </div>
+
+
+        {/* Navigation Links */}
         <nav className={`nav-links${menuOpen ? " open" : ""}`}>
           <ul>
-            <Link activeClass="active" to="home" spy={true} smooth={true} offset={-700} duration={500}>
+
+            <Link
+              to="home"
+              spy
+              smooth
+              offset={-700}
+              duration={500}
+              activeClass="active"
+              onClick={handleLinkClick}
+            >
               <li>{t.home}</li>
             </Link>
-            <Link activeClass="active" to="about" spy={true} smooth={true} offset={-100} duration={300}>
+
+            <Link
+              to="about"
+              spy
+              smooth
+              offset={-100}
+              duration={300}
+              activeClass="active"
+              onClick={handleLinkClick}
+            >
               <li>{t.about}</li>
             </Link>
-            <Link activeClass="active" to="team" spy={true} smooth={true} offset={-60} duration={500}>
+
+            <Link
+              to="team"
+              spy
+              smooth
+              offset={-60}
+              duration={500}
+              activeClass="active"
+              onClick={handleLinkClick}
+            >
               <li>{t.team}</li>
             </Link>
-            <Link activeClass="active" to="work" spy={true} smooth={true} offset={-50} duration={500}>
+
+            <Link
+              to="work"
+              spy
+              smooth
+              offset={-50}
+              duration={500}
+              activeClass="active"
+              onClick={handleLinkClick}
+            >
               <li>{t.work}</li>
             </Link>
-            <Link activeClass="active" to="volunteer" spy={true} smooth={true} offset={-100} duration={500}>
+
+            <Link
+              to="volunteer"
+              spy
+              smooth
+              offset={-100}
+              duration={500}
+              activeClass="active"
+              onClick={handleLinkClick}
+            >
               <li>{t.volunteer}</li>
             </Link>
-            <Link activeClass="active" to="feedback" spy={true} smooth={true} offset={-100} duration={500}>
+
+            <Link
+              to="feedback"
+              spy
+              smooth
+              offset={-100}
+              duration={500}
+              activeClass="active"
+              onClick={handleLinkClick}
+            >
               <li>{t.contact}</li>
             </Link>
+
           </ul>
         </nav>
-        <div className="hamburger" onClick={() => setMenuOpen((prev) => !prev)} aria-label="Toggle navigation">
+
+
+        {/* Mobile Hamburger Menu */}
+        <div
+          className="hamburger"
+          onClick={() => setMenuOpen(prev => !prev)}
+          aria-label="Toggle navigation"
+          role="button"
+          tabIndex={0}
+        >
           <span />
           <span />
           <span />
         </div>
+
       </div>
     </div>
   )

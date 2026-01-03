@@ -1,52 +1,98 @@
-"use client";
+"use client"
 
-import React from "react";
-import { useLanguage } from "../contexts/LanguageContext";
-import { translations } from "../data/translations";
-import "../style/complaint-form.css";
+// ==============================
+// Imports
+// ==============================
 
+import React from "react"
+
+// Language context for i18n support
+import { useLanguage } from "../contexts/LanguageContext"
+
+// Translation data
+import { translations } from "../data/translations"
+
+// Component-specific styles
+import "../style/complaint-form.css"
+
+
+// ==============================
+// ComplaintForm Component
+// ==============================
 export default function ComplaintForm() {
-  const { language } = useLanguage();
-  const t = translations.complaint[language];
 
+  // --------------------------------
+  // Language & Translations
+  // --------------------------------
+  const { language } = useLanguage()
+  const t = translations.complaint[language]
+
+
+  // --------------------------------
+  // External Complaint Form Handler
+  // --------------------------------
+  // Opens Google Form in a new browser tab
   const handleComplaintClick = () => {
     window.open(
       "https://docs.google.com/forms/d/e/1FAIpQLSclGu598MlAUoo32xZTc9R1IWQEZrD3tmgJAKnWQJC3QcfQJA/viewform",
       "_blank"
-    );
-  };
+    )
+  }
 
+
+  // ==============================
+  // JSX
+  // ==============================
   return (
     <div className="complaint-container">
-      {/* Decorative Shapes */}
-     
-      {/* Image */}
+
+      {/* --------------------------------
+         Image Section
+         -------------------------------- */}
       <div className="complaint-image-section">
         <img
-          src="/complaint.png"
+          src="/complaint.jpeg"
           alt={t.imageAlt}
           className="complaint-image"
         />
       </div>
 
-      {/* Text Section */}
+
+      {/* --------------------------------
+         Text & Action Section
+         -------------------------------- */}
       <div className="complaint-form-section">
-       
+
         <div className="complaint-content">
+
+          {/* Title */}
           <h1 className="complaint-title">
             {t.headingLine1} <br /> {t.headingLine2}
           </h1>
 
-          <p className="complaint-description">{t.description}</p>
-          <p className="mobile-text">{t.shortdescription}</p>
+          {/* Desktop Description */}
+          <p className="complaint-description">
+            {t.description}
+          </p>
 
+          {/* Mobile Short Description */}
+          <p className="mobile-text">
+            {t.shortdescription}
+          </p>
+
+          {/* CTA Button */}
           <div className="complaint-button-wrapper">
-            <button className="submit-button" onClick={handleComplaintClick}>
+            <button
+              className="submit-button"
+              onClick={handleComplaintClick}
+            >
               {t.button}
             </button>
           </div>
+
         </div>
       </div>
+
     </div>
-  );
+  )
 }

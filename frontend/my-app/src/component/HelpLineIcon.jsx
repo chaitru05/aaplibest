@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./HelplineIcon.css";
+import "../style/HelplineIcon.css";
 import { Phone } from "lucide-react"; // Optional: for icon (npm install lucide-react)
 
 const HelpLineIcon = () => {

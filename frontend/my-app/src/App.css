@@ -65,7 +65,8 @@ section {
 .heading-hero {
   font-size: 50px;
   font-family: "Story Script", sans-serif;
-  color: rgb(204, 8, 8);
+  color: rgb(103, 7, 7);
+  margin-left: 150px;
 }
 
 
@@ -105,9 +106,9 @@ section {
   width: 60%;
   background: linear-gradient(
     135deg,
-    rgba(255, 204, 1, 0.7) 0%,
-    rgba(255, 204, 1, 0.7) 50%,
-    rgba(255, 204, 1, 0.7) 100%
+    rgba(224, 183, 18, 0.7) 0%,
+    rgba(237, 192, 15, 0.7) 50%,
+    rgba(239, 194, 14, 0.7) 100%
   );
   clip-path: polygon(40% 0%, 100% 0%, 100% 100%, 0% 100%);
   display: flex;
@@ -120,6 +121,7 @@ section {
   position: absolute;
   max-width: 60%;
   margin-top: -90px;
+  margin-right: 50px;
 }
 
 .hero-text-container {
@@ -143,16 +145,18 @@ section {
 .hero-tagline {
   font-size: 2.5rem;
   font-weight: 900;
-  color: #f3f3f3;
+  color: #ffffff;
   font-style: italic;
   margin: 0;
   font-family: "DM Serif Display", serif;
 }
 
 .hero-subtitle {
-  font-size: 1.8rem;
+  font-size: 2rem;
+  padding: 0 30px;
+  text-align: center;
   font-weight: 900;
-  color: #020202;
+  color: #1f1717;
   margin: 0;
   font-family: "DM Serif Display", serif;
 }
@@ -412,14 +416,18 @@ section {
 }
   .heading-hero {
     font-size: 28px;
+    margin-left: -10px;
   }
 
   .hero-tagline {
     font-size: 1.5rem;
+    margin-left: -10px;
   }
 
   .hero-subtitle {
     font-size: 1.1rem;
+    margin-left: -10px;
+    justify-content: space-evenly;
   }
 
   .hero-title {
@@ -432,5 +440,53 @@ section {
 
   .hero-bus {
     max-width: 300px;
+  }
+}
+
+.back-home-btn {
+  position: absolute;            /* KEY FIX */
+  top: 12px;
+  left: 12px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: white;
+  color: #d32f2f;
+
+  padding: 6px 12px;
+  border-radius: 9px;
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease;
+  z-index: 1000;                 /* stay above content */
+}
+
+/* Hover */
+.back-home-btn:hover {
+  background: #e11d48;
+  color: #fff;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .back-home-btn {
+    padding: 8px 14px;
+    font-size: 16px;
+    border-radius: 12px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .back-home-btn {
+    padding: 10px 16px;
+    font-size: 18px;
+    border-radius: 14px;
+    margin-top: 50px;
+    height: 30px;
   }
 }

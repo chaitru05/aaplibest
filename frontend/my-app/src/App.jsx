@@ -3,25 +3,23 @@
 import "./App.css"
 import { useEffect, useState, useRef } from "react"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
-import buildingBg from "./assets/bg2.jpg"
-import redBus from "./assets/hero-1.png"
 import TeamSection from "./component/TeamSection"
-import CategorySlider from "./component/CategorySlider"
 import About from "./component/About"
 import Footer from "./component/Footer"
 import VolunteerSection from "./component/VolunteerSection"
 import Navbar from "./component/Navbar"
-import FeedbackPage from "./component/FeedbackPage"
+import Ourwork from "./component/Ourwork.jsx"
 import { LanguageProvider, useLanguage } from "./contexts/LanguageContext"
 import { translations } from "./data/translations"
 import About1 from "./component/About1.jsx"
-import Cnetric from "./component/Cnetric.jsx"
-import Routedev from "./component/Routedev.jsx"
-import Policyacc from "./component/Policyacc.jsx"
+import Cnetric from "./pages/Cnetric.jsx"
+import Routedev from "./pages/Routedev.jsx"
+import Policyacc from "./pages/Policyacc.jsx"
 import HelpLineIcon from "./component/HelpLineIcon.jsx"
 import ComplaintForm from "./component/ComplaintForm.jsx"
-import PassengerIntervention from "./component/PassengerIntervention.jsx"
-import PublicAwareness from "./component/PublicAwareness.jsx"
+import PassengerIntervention from "./pages/PassengerIntervention.jsx"
+import PublicAwareness from "./pages/PublicAwareness.jsx"
+import ScrollToTop from "./component/ScrollToTop.jsx"
 
 function HomePage() {
   const { language } = useLanguage()
@@ -60,7 +58,7 @@ function HomePage() {
         {/* Background */}
         <div
           className="hero-background"
-          style={{ backgroundImage: `url(${buildingBg})` }}
+          style={{ backgroundImage: `url(/hero/bg2.jpeg)` }}
         >
           <div className="hero-overlay-dark" />
         </div>
@@ -96,7 +94,7 @@ function HomePage() {
         {/* Bus animation */}
         <div className="hero-bus-container">
           <img
-            src={redBus}
+            src={"/hero/hero-1.png"}
             alt="Community Bus"
             className={`hero-bus ${
               isLoaded ? "animate-bus-slide" : "bus-hidden"
@@ -116,12 +114,12 @@ function HomePage() {
         <TeamSection />
       </section>
       <section id="work">
-        <CategorySlider /> {/* 🚀 Slider is inside home */}
+        <Ourwork /> 
       </section>
       <section id="volunteer">
         <VolunteerSection />
       </section>
-      <section id="contact">
+      <section id="feedback">
         <ComplaintForm /> 
       </section>
       <Footer />
@@ -134,6 +132,7 @@ function App() {
     <LanguageProvider>
     
         <Navbar />
+        <ScrollToTop />
         <Routes>
           {/* Home */}
           

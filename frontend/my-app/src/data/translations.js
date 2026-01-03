@@ -6,7 +6,7 @@ export const translations = {
       team: "Team",
       volunteer: "Volunteer",
       work: "Our Work",
-      contact: "Contact",
+      contact: "Complaint",
     },
     mr: {
       home: "मुख्यपृष्ठ",
@@ -384,9 +384,9 @@ centric: {
       "This heartfelt campaign honored their silent yet invaluable service to Mumbai city.",
 
     vitthalCards: [
-      { id: 1, image: "/best-bus-conductors-felicitation-ceremony.png", hasVideo: true, videoUrl: "/video-vitthal-1.mp4" },
-      { id: 2, image: "/vitthalimg2.png", hasVideo: true, videoUrl: "video-vitthal-2.mp4" },
-      { id: 3, image: "/vitthalimg.jpeg", hasVideo: false }
+      { id: 1, image: "/centric/best-bus-conductors-felicitation-ceremony.jpeg", hasVideo: true, videoUrl: "/centric/vithal-1.mp4" },
+      { id: 2, image: "/centric/vitthalimg2.jpeg", hasVideo: true, videoUrl: "/centric/vithal-2.mp4" },
+      { id: 3, image: "/centric/vitthalimg.jpeg", hasVideo: false }
     ],
 
     bestDayTitle: "Celebrating BEST Day – 7th August 2025",
@@ -395,9 +395,9 @@ centric: {
       "We celebrated BEST Day at Ghatkopar Depot, distributing chocolates as a gesture of gratitude.",
 
     bestDayMedia: [
-      { id: 1, image: "/BEST DAY 2.jpg", hasVideo: false },
-      { id: 2, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCefatA8TXJLpYhWPPWwgm78tUqjr91ooSQw&s", hasVideo: true, videoUrl: "BEST DAY Video.mp4" },
-      { id: 3, image: "/BEST DAY 1.jpg", hasVideo: false }
+      { id: 1, image: "/centric/BEST-DAY-2.jpeg", hasVideo: false },
+      { id: 2, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCefatA8TXJLpYhWPPWwgm78tUqjr91ooSQw&s", hasVideo: true, videoUrl: "/centric/centric-video.mp4" },
+      { id: 3, image: "/centric/BEST-DAY-1.jpeg", hasVideo: false }
     ],
   },
 
